@@ -1,0 +1,34 @@
+{
+  "name": "rz",
+  "version": "0.0.1",
+  "description": "Peruvian Recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paolocarrasco/rz.git"
+  },
+  "keywords": [
+    "recipes",
+    "recetas",
+    "peru",
+    "peruvian",
+    "comida",
+    "peruana",
+    "cocina",
+    "peruano",
+    "recetario"
+  ],
+  "author": "Paolo Carrasco",
+  "license": "gpl-v2",
+  "bugs": {
+    "url": "https://github.com/paolocarrasco/rz/issues"
+  },
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*"
+  }
+}

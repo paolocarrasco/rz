@@ -11,7 +11,7 @@ textarea {
 }
 
 body {
-    font-size: 1em;
+    font-size: .8em;
     line-height: 1.4;
 }
 
@@ -156,13 +156,45 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.dishes img {
+    width: auto;
+    height: 150px;
+    float: left;
+    -webkit-box-shadow: 2px 2px 3px #ccc;
+    -moz-box-shadow: 2px 2px 3px #ccc;
+    box-shadow: 2px 2px 3px #ccc;
+    margin: 1em;
+}
 
+.dishes article {
+    font-size: .7em;
+}
 
+.dishes article h1, .dishes article h2 {
+    margin-bottom: 0;
+}
 
+.dishes article h1 {
+    font-size: 1.2em;
+}
 
+.dishes article h2 {
+    font-size: 1em;
+}
 
+.dishes article {
+    font-size: 1em;
+}
 
+.dishes article p {
+    margin: .3em 0;
+}
 
+.main aside p {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
 
 
 

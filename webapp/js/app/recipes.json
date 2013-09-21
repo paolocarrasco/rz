@@ -1,0 +1,51 @@
+{
+    "recipes": [
+        {
+            "name": "papa a la huancaína",
+            "description": "Plato típico de Huancayo, región del Perú, compuesto de patatas cocidas acompañadas de una salsa de queso, leche y pimiento amarillo.",
+            "imageUrl": "http://perudelights.com/wp-content/uploads/2011/07/papa-a-la-huancaina-lista.jpg",
+            "categories": ["entrada", "picante", "acompañamiento"],
+            "ingredients": [
+                {
+                    "name": "aji amarillo",
+                    "quantity": 2
+                },
+                {
+                    "name": "papas",
+                    "quantity": 0.5,
+                    "units": "kg"
+                }
+                ],
+            "preparation": [
+                {
+                    "stepNumber": 1,
+                    "details": ""
+                },
+                {
+                    "stepNumber": 2,
+                    "details": ""
+                }],
+            "history": "La historia acerca del origen del nombre es que lo debe a la región peruana de Junín, porque el creador de este plato, compraba los ingredientes - sobre todo papa - en la ciudad de Huancayo en el valle del río Mantaro y por homenajear a esta región lo nominó como Papa a la Huancaína. El valle del Mantaro, es famoso por la elaboración de queso fresco y alta producción de papas, no sólo en rendimiento en toneladas/hectárea sino porque produce más de 3.000 variedades de la misma en el valle.[cita requerida] Otra historia cuenta que en la primera estación en Lima del tren con destino a Huancayo, se servía este plato, por lo que se le empezó a llamar papa a la huancaína. En cambio, Jorge Stambury en su libro La Gran Cocina Peruana indica que su procedencia es huancaína y surge durante la construcción del Ferrocarril Central del Perú que requería gran cantidad de obreros. El alimento de los trabajadores era preparado por mujeres huancas que sancochaban papas y las servían bañadas en una salsa de queso mezclado con rocoto y leche, adornado con huevo duro. A este plato se le llamó papas a la huancaína. La receta migró a Lima, cambiando el rocoto por ají y, más tarde, el batán por la licuadora"
+        },
+        {
+            "name": "lomo saltado",
+            "description": "El lomo saltado es un plato típico de la gastronomía del Perú cuyos registros datan de fines del siglo XIX",
+            "imageUrl": "http://www.peruadomicilio.cl/contacto/wp-content/uploads/2013/02/lomo-saltado-garden-084.jpg",
+            "categories": ["plato de fondo", "criolla"],
+            "ingredients": [
+                {
+                    "name": "papa",
+                    "quantity": 0.5,
+                    "units": "kilo"
+                }],
+            "preparation": [
+                {
+                    "stepNumber": 1,
+                    "details": ""
+                },
+                {
+                    "stepNumber": 2,
+                    "details": ""
+                }]
+        }]
+}

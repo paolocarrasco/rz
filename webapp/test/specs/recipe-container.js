@@ -1,13 +1,13 @@
 var should = chai.should();
 describe('recipeContainer', function() {
     "use strict";
-    var recipeContainer;
-    beforeEach(function () {
-        recipeContainer = new RecipeContainer();
-    });
-    
     describe('when recipes have been added', function(){
             
+        var recipeContainer;
+        beforeEach(function () {
+            recipeContainer = new RecipeContainer();
+        });
+        
         var recipes = [
                 {
                     name: "arroz con pollo",

@@ -14,7 +14,7 @@ describe('RecipeController', function(){
         recipeController = new RecipeController(
             {recipeContainer: recipeContainer, recipeView: recipeView});
         ajax = $.getJSON;
-        $.getJSON = function(params) {
+        $.getJSON = function(url, success) {
             var data = {recipes: [
                         {
                             "name": "carapulcra",
@@ -23,7 +23,7 @@ describe('RecipeController', function(){
                         }
                     ]
                 };
-            params.success(data);
+            success(data);
         };
     });
 

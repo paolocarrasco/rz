@@ -3,34 +3,29 @@ describe('RecipeView', function () {
     var recipeView, recipeListElement = document.createElement('section');
 
     beforeEach(function () {
-       recipeView = new RecipeView(recipeListElement);
+        var recipeContainer = new RecipeContainer();
+        var recipes = [
+            {
+                name: "arroz con pollo",
+                description: "comida criolla de arroz y pollo",
+            },
+            {
+                name: "aji de gallina",
+                description: "comida criolla de arroz y pollo",
+            }
+        ];
+        recipeContainer.addRecipes(recipes);
+        recipeView = new RecipeView(
+            {
+                element: recipeListElement, 
+                recipeContainer: recipeContainer
+            });
     });
     
     describe('#bind', function() {
-        var recipes = [
-                {
-                    name: "arroz con pollo",
-                    ingredients: [{
-                        name: "arroz",
-                        quantity: 3,
-                        units: "kg"
-                    }],
-                    description: "comida criolla de arroz y pollo",
-                    preparation: []
-                },
-                {
-                    name: "aji de gallina",
-                    ingredients: [{
-                        name: "aji",
-                        quantity: 2
-                    }],
-                    description: "comida criolla de arroz y pollo",
-                    preparation: []
-                }
-            ];
-        
         it('should bind the recipes properties with the template', function () {
-            recipeView.bind(recipes);
+            recipeListElement.children.should.have.length(0);
+            recipeView.bind();
             recipeListElement.children.should.have.length(2);
             recipeListElement.querySelector('.name').innerHTML.should.match(/arroz con pollo/);
         });

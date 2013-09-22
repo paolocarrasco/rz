@@ -17,12 +17,9 @@ describe('RecipeContainer', function() {
                 {
                     name: "arroz con pollo",
                     ingredients: [{
-                        name: "arroz",
-                        quantity: 3,
-                        units: "kg"
+                        name: "arroz"
                     }],
                     description: "comida criolla de arroz y pollo",
-                    preparation: []
                 },
                 {
                     name: "aji de gallina",
@@ -31,7 +28,6 @@ describe('RecipeContainer', function() {
                         quantity: 2
                     }],
                     description: "comida criolla de arroz y pollo",
-                    preparation: []
                 }
             ];
         

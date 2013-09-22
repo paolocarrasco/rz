@@ -1,6 +1,7 @@
 var RecipeContainer = function() {
-        this.recipes = [];
-        this.addRecipes = function(recipes) {
-            this.recipes = recipes;
-        };
+    'use strict';
+    this.recipes = [];
+    this.addRecipes = function(recipes) {
+        this.recipes = recipes;
+    };
 };

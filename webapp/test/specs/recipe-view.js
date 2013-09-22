@@ -1,18 +1,12 @@
-var should = chai.should();
-describe('RecipeContainer', function() {
-    "use strict";
-    
-    var recipeContainer;
+describe('RecipeView', function () {
+    'use strict';
+    var recipeView, recipeListElement = document.createElement('section');
+
     beforeEach(function () {
-        recipeContainer = new RecipeContainer();
+       recipeView = new RecipeView(recipeListElement);
     });
     
-    it('should start with zero recipes', function () {
-        recipeContainer.recipes.should.have.length(0);
-    });
-    
-    describe('#addRecipes', function(){
-        
+    describe('#bind', function() {
         var recipes = [
                 {
                     name: "arroz con pollo",
@@ -35,11 +29,10 @@ describe('RecipeContainer', function() {
                 }
             ];
         
-        it('should add the given recipes', function () {
-            recipeContainer.addRecipes(recipes);
-            recipeContainer.recipes.should.have.length(2);
+        it('should bind the recipes properties with the template', function () {
+            recipeView.bind(recipes);
+            recipeListElement.children.should.have.length(2);
+            recipeListElement.querySelector('.name').innerHTML.should.match(/arroz con pollo/);
         });
-        
     });
-        
 });

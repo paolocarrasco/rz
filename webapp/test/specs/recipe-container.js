@@ -1,4 +1,3 @@
-var should = chai.should();
 describe('RecipeContainer', function() {
     "use strict";
     

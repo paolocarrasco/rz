@@ -21,9 +21,17 @@ var RecipeView = function(params) {
             var recipeBounded = recipeTemplate
                         .replace(/{{imageUrl}}/g, recipe.imageUrl)
                         .replace(/{{name}}/g, recipe.name)
-                        .replace(/{{description}}/g, recipe.ingredients);
+                        .replace(/{{description}}/g, recipe.description)
+                        .replace(/{{ingredients}}/g, ingredientsToHtml(recipe.ingredients));
             recipesBounded.push(recipeBounded);
         }
         params.element.innerHTML = recipesBounded.join('');
     };
+    
+    function ingredientsToHtml(ingredients) {
+        var ingredientNames = ingredients.map(function(ingredient) {
+            return ingredient.name;
+        });
+        return ingredientNames.join(', ');
+    }
 };

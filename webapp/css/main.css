@@ -178,6 +178,10 @@ nav a:hover {
     font-size: 1.2em;
 }
 
+.dishes article h1:first-letter {
+    text-transform: capitalize;
+}
+
 .dishes article h2 {
     font-size: 1em;
 }

@@ -8,10 +8,12 @@ describe('RecipeView', function () {
             {
                 name: "arroz con pollo",
                 description: "comida criolla de arroz y pollo",
+                ingredients: [{name: 'arroz'}, {name: 'pollo'}]
             },
             {
                 name: "aji de gallina",
-                description: "comida criolla de arroz y pollo",
+                description: "comida criolla de arroz y gallina",
+                ingredients: [{name: 'aji'}, {name: 'gallina'}]
             }
         ];
         recipeContainer.addRecipes(recipes);
@@ -28,6 +30,12 @@ describe('RecipeView', function () {
             recipeView.bind();
             recipeListElement.children.should.have.length(2);
             recipeListElement.querySelector('.name').innerHTML.should.match(/arroz con pollo/);
+        });
+        
+        it('should render every ingredient of the recipe', function() {
+            recipeView.bind();
+            recipeListElement.children[0].querySelector('section>p').innerHTML.should.match(/arroz, pollo/);
+            recipeListElement.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
         });
     });
 });

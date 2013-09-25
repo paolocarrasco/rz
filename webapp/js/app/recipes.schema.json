@@ -8,6 +8,9 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "label": {
+                            "type": "string"
+                            },
                     "name": {
                             "type": "string"
                             },
@@ -68,7 +71,7 @@
                         "type": "string"
                     }
                 },
-                "required": ["name", "description", "ingredients", "preparation"],
+                "required": ["label", "name", "description", "ingredients", "preparation"],
                 "additionalProperties": false
             }
         }

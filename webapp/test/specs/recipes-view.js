@@ -1,9 +1,9 @@
 describe('RecipeView', function () {
     'use strict';
-    var recipeView, recipeListElement = document.createElement('section');
+    var recipesView, recipeListElement = document.createElement('section');
 
     beforeEach(function () {
-        var recipeContainer = new RecipesContainer();
+        var recipesContainer = new RecipesContainer();
         var recipes = [
             {
                 name: "arroz con pollo",
@@ -18,24 +18,24 @@ describe('RecipeView', function () {
                 ingredients: [{name: 'aji'}, {name: 'gallina'}]
             }
         ];
-        recipeContainer.addRecipes(recipes);
-        recipeView = new RecipeView(
+        recipesContainer.addRecipes(recipes);
+        recipesView = new RecipesView(
             {
                 element: recipeListElement, 
-                recipeContainer: recipeContainer
+                recipesContainer: recipesContainer
             });
     });
     
     describe('#bind', function() {
         it('should bind the recipes properties with the template', function () {
             recipeListElement.children.should.have.length(0);
-            recipeView.bind();
+            recipesView.bind();
             recipeListElement.children.should.have.length(2);
             recipeListElement.querySelector('.name').innerHTML.should.match(/arroz con pollo/);
         });
         
         it('should render every ingredient of the recipe', function() {
-            recipeView.bind();
+            recipesView.bind();
             recipeListElement.children[0].querySelector('section>p').innerHTML.should.match(/arroz, pollo/);
             recipeListElement.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
         });

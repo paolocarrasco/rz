@@ -1,13 +1,13 @@
 (function($){
     $(function() {
-        var recipeContainer = new RecipesContainer(),
-            recipeView = new RecipeView({
-                    recipeContainer: recipeContainer,
+        var recipesContainer = new RecipesContainer(),
+            recipesView = new RecipesView({
+                    recipesContainer: recipesContainer,
                     element: document.querySelector('.dishes')
                 }),
             recipeController = new RecipeController({
-                recipeView: recipeView,
-                recipeContainer: recipeContainer
+                recipeView: recipesView,
+                recipeContainer: recipesContainer
             });
             recipeController.loadRecipes();
     });

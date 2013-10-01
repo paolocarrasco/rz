@@ -3,7 +3,7 @@ describe('RecipeView', function () {
     var recipeView, recipeListElement = document.createElement('section');
 
     beforeEach(function () {
-        var recipeContainer = new RecipeContainer();
+        var recipeContainer = new RecipesContainer();
         var recipes = [
             {
                 name: "arroz con pollo",

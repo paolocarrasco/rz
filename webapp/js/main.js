@@ -1,6 +1,6 @@
 (function($){
     $(function() {
-        var recipeContainer = new RecipeContainer(),
+        var recipeContainer = new RecipesContainer(),
             recipeView = new RecipeView({
                     recipeContainer: recipeContainer,
                     element: document.querySelector('.dishes')

@@ -4,7 +4,7 @@ describe('RecipeController', function(){
     var ajax;
             
     beforeEach(function() {
-        recipeContainer = new RecipeContainer();
+        recipeContainer = new RecipesContainer();
         recipeView = {
             bound: false,
             bind: function(recipes) {

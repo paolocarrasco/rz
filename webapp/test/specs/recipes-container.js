@@ -1,13 +1,13 @@
-describe('RecipeContainer', function() {
+describe('RecipesContainer', function() {
     "use strict";
     
-    var recipeContainer;
+    var recipesContainer;
     beforeEach(function () {
-        recipeContainer = new RecipeContainer();
+        recipesContainer = new RecipesContainer();
     });
     
     it('should start with zero recipes', function () {
-        recipeContainer.recipes.should.have.length(0);
+        recipesContainer.recipes.should.have.length(0);
     });
     
     describe('#addRecipes', function(){
@@ -31,8 +31,8 @@ describe('RecipeContainer', function() {
             ];
         
         it('should add the given recipes', function () {
-            recipeContainer.addRecipes(recipes);
-            recipeContainer.recipes.should.have.length(2);
+            recipesContainer.addRecipes(recipes);
+            recipesContainer.recipes.should.have.length(2);
         });
         
     });

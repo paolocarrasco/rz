@@ -1,4 +1,4 @@
-var RecipeContainer = function() {
+var RecipesContainer = function() {
     'use strict';
     var recipes = [];
     this.addRecipes = function(rcps) {
@@ -7,5 +7,4 @@ var RecipeContainer = function() {
     this.__defineGetter__("recipes", function(){
         return recipes;
     });
-   
 }

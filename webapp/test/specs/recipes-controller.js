@@ -1,6 +1,6 @@
-describe('RecipeController', function(){
+describe('RecipesController', function(){
     'use strict';
-    var recipeController, recipesView, recipesContainer;
+    var recipesController, recipesView, recipesContainer;
     var ajax;
             
     beforeEach(function() {
@@ -11,8 +11,8 @@ describe('RecipeController', function(){
                 this.bound = recipesContainer.recipes.length > 0;
             }
         };
-        recipeController = new RecipeController(
-            {recipeContainer: recipesContainer, recipeView: recipesView});
+        recipesController = new RecipesController(
+            {recipesContainer: recipesContainer, recipesView: recipesView});
         ajax = $.getJSON;
         $.getJSON = function(url, success) {
             var data = {recipes: [
@@ -29,7 +29,7 @@ describe('RecipeController', function(){
 
     describe('#loadRecipes', function() {
         it('should retrieve recipes', function() {
-            recipeController.loadRecipes();
+            recipesController.loadRecipes();
             recipesContainer.recipes.should.have.length(1);
             recipesView.bound.should.be.truthy;
         });

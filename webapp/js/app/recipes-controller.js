@@ -1,11 +1,11 @@
-var RecipeController = function(params) {
-    var recipeContainer = params.recipeContainer,
-        recipeView = params.recipeView;
+var RecipesController = function(params) {
+    var recipesContainer = params.recipesContainer,
+        recipesView = params.recipesView;
         
     this.loadRecipes = function() {
         $.getJSON('js/app/recipes.json', function(data) {
-                recipeContainer.addRecipes(data.recipes);
-                recipeView.bind();
+                recipesContainer.addRecipes(data.recipes);
+                recipesView.bind();
         });
     };
 };

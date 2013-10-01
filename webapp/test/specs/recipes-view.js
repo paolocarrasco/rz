@@ -1,4 +1,4 @@
-describe('RecipeView', function () {
+describe('RecipesView', function () {
     'use strict';
     var recipesView, recipeListElement = document.createElement('section');
 

@@ -5,10 +5,10 @@
                     recipesContainer: recipesContainer,
                     element: document.querySelector('.dishes')
                 }),
-            recipeController = new RecipeController({
-                recipeView: recipesView,
-                recipeContainer: recipesContainer
+            recipesController = new RecipesController({
+                recipesView: recipesView,
+                recipesContainer: recipesContainer
             });
-            recipeController.loadRecipes();
+            recipesController.loadRecipes();
     });
 })(jQuery);

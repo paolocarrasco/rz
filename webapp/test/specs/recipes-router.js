@@ -7,7 +7,7 @@ describe('RecipesRouter', function() {
                 dispatchEvent: function(event) {
                     listeners[event.type]();
                 },
-                addEventListener: function(eventName, listener, bubble) {
+                addEventListener: function(eventName, listener) {
                     listeners[eventName] = listener;
                 }
             };
@@ -38,7 +38,7 @@ describe('RecipesRouter', function() {
         
         it('should call the registered handler when the popstate event is dispatched', function(done) {
             recipesRouter.onSelected(function(label) {
-                label.should.match(/turron-dona-pepa/)
+                label.should.match(/turron-dona-pepa/);
                 done();
             });
             eventEmitter.dispatchEvent({type: 'popstate'});

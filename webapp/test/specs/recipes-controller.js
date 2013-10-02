@@ -7,7 +7,7 @@ describe('RecipesController', function(){
         recipesContainer = new RecipesContainer();
         recipesView = {
             bound: false,
-            bind: function(recipes) {
+            bind: function() {
                 this.bound = recipesContainer.recipes.length > 0;
             }
         };

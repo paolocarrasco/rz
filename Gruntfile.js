@@ -8,6 +8,7 @@ module.exports = function(grunt) {
       options: {
         curly: true,
         eqeqeq: true,
+        expr: true,
         immed: true,
         latedef: true,
         newcap: true,
@@ -18,15 +19,21 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        globals: {
-          jQuery: true
-        }
+        predef: [
+          'it', 
+          'describe',
+          'should',
+          'beforeEach',
+          'afterEach',
+          'before',
+          'after'
+        ]
       },
       gruntfile: {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
+        src: ['webapp/js/app/**/*.js', 'webapp/test/specs/**/*.js']
       }
     },
     watch: {
@@ -47,5 +54,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('complete', ['jshint', 'webapptest']);
 
 };

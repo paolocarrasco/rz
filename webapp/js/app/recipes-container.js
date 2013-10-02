@@ -7,4 +7,4 @@ var RecipesContainer = function() {
     this.__defineGetter__("recipes", function(){
         return recipes;
     });
-}
+};

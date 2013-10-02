@@ -41,7 +41,7 @@ describe('RecipesRouter', function() {
                 label.should.match(/turron-dona-pepa/)
                 done();
             });
-            eventEmitter.dispatchEvent(new Event('popstate'))
+            eventEmitter.dispatchEvent({type: 'popstate'});
         });
     });
 });

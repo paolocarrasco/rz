@@ -40,4 +40,5 @@ describe('RecipesView', function () {
             recipeListElement.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
         });
     });
+    
 });

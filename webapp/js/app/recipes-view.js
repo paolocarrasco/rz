@@ -10,8 +10,8 @@ var RecipesView = function(params) {
                             <h2>Ingredientes principales</h2>\
                             <p>{{ingredients}}</p>\
                         </section>\
-                    </article>';
-    var recipesContainer = params.recipesContainer;
+                    </article>',
+        recipesContainer = params.recipesContainer;
                     
     this.bind = function() {
         var recipesBounded = [];

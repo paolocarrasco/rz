@@ -8,6 +8,10 @@
             recipesController = new RecipesController({
                 recipesView: recipesView,
                 recipesContainer: recipesContainer
+            }),
+            recipesRouter = new RecipesRouter(window, location);
+            recipesRouter.onSelected(function (label) {
+                console.log(label);
             });
             recipesController.loadRecipes();
     });

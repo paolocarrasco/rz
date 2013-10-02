@@ -29,7 +29,8 @@
   "devDependencies": {
     "grunt": "0.4.1",
     "grunt-contrib-jshint": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-mocha-phantomjs": "~0.3.0"
   },
   "dependencies": {
     "express": ">=3.4.0"

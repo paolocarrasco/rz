@@ -32,8 +32,11 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
-      lib_test: {
-        src: ['webapp/js/app/**/*.js', 'webapp/test/specs/**/*.js']
+      app_files: {
+        src: ['webapp/js/app/**/*.js']  
+      },
+      test_files: {
+        src: ['webapp/test/specs/**/*.js']
       }
     },
     watch: {
@@ -41,9 +44,13 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test','mocha_phantomjs']
+      app_files: {
+        files: '<%= jshint.app_files.src %>',
+        tasks: ['jshint:app_files']
+      },
+      test_files: {
+        files: '<%= jshint.test_files.src %>',
+        tasks: ['jshint:test_files','mocha_phantomjs']
       }
     },
     mocha_phantomjs: {
@@ -59,6 +66,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   
   // Default task.
-  grunt.registerTask('default', ['mocha_phantomjs']);
+  grunt.registerTask('default', ['jshint', 'mocha_phantomjs']);
 
 };

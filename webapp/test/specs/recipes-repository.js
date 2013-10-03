@@ -1,3 +1,4 @@
+/* globals RecipesRepository: true */
 describe('RecipesRepository', function() {
     var recipesRepository, data, recipesUri = '/ws/recipes';
     'use strict';

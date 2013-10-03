@@ -1,3 +1,4 @@
+/* global RecipesContainer: true */
 describe('RecipesContainer', function() {
     "use strict";
     

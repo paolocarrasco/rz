@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       },
       lib_test: {
         files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test']
+        tasks: ['jshint:lib_test','mocha_phantomjs']
       }
     },
     mocha_phantomjs: {

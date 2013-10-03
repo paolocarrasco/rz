@@ -1,3 +1,4 @@
+/* globals RecipesRouter: true */
 describe('RecipesRouter', function() {
     var recipesRouter, eventEmitter, pageLocation;
     beforeEach(function() {

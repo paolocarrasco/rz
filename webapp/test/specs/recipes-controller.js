@@ -1,3 +1,4 @@
+/* globals RecipesController: true */
 describe('RecipesController', function(){
     'use strict';
     var recipesController, recipesView, recipesContainer;

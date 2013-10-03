@@ -1,3 +1,4 @@
+/* globals RecipesView: true */
 describe('RecipesView', function () {
     'use strict';
     var recipesView, recipes, recipeListElement;

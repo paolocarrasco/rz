@@ -1,4 +1,4 @@
-var RecipesView = function(params) {
+var RecipesView = function(element) {
     var recipeTemplate = 
                     '<article>\
                         <img src="{{imageUrl}}" alt="{{name}}" >\
@@ -10,14 +10,13 @@ var RecipesView = function(params) {
                             <h2>Ingredientes principales</h2>\
                             <p>{{ingredients}}</p>\
                         </section>\
-                    </article>',
-        recipesContainer = params.recipesContainer;
+                    </article>';
                     
-    this.bind = function() {
+    this.bind = function(recipes) {
         var recipesBounded = [];
         
-        for(var index = 0, len = recipesContainer.recipes.length; index < len; index++) {
-            var recipe = recipesContainer.recipes[index];
+        for(var index = 0, len = recipes.length; index < len; index++) {
+            var recipe = recipes[index];
             var recipeBounded = recipeTemplate
                         .replace(/{{imageUrl}}/g, recipe.imageUrl)
                         .replace(/{{name}}/g, recipe.name)
@@ -25,7 +24,7 @@ var RecipesView = function(params) {
                         .replace(/{{ingredients}}/g, ingredientsToHtml(recipe.ingredients));
             recipesBounded.push(recipeBounded);
         }
-        params.element.innerHTML = recipesBounded.join('');
+        element.innerHTML = recipesBounded.join('');
     };
     
     function ingredientsToHtml(ingredients) {

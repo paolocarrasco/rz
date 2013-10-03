@@ -3,9 +3,8 @@ var RecipesController = function(params) {
         recipesView = params.recipesView;
         
     this.loadRecipes = function() {
-        $.getJSON('js/app/recipes.json', function(data) {
-                recipesContainer.addRecipes(data.recipes);
-                recipesView.bind();
+        recipesContainer.fetch(function() {
+            recipesView.bind(recipesContainer.recipes);
         });
     };
 };

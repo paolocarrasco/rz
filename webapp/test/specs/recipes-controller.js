@@ -1,41 +1,34 @@
 describe('RecipesController', function(){
     'use strict';
     var recipesController, recipesView, recipesContainer;
-    var ajax;
             
     beforeEach(function() {
-        recipesContainer = new RecipesContainer();
-        recipesView = {
-            bound: false,
-            bind: function() {
-                this.bound = recipesContainer.recipes.length > 0;
+        recipesContainer = {
+            recipes: [],
+            fetch: function(callback) {
+                this.recipes = [
+                        { name: "carapulcra" }, { name: "rocoto relleno" }
+                    ];
+                callback();
             }
         };
-        recipesController = new RecipesController(
-            {recipesContainer: recipesContainer, recipesView: recipesView});
-        ajax = $.getJSON;
-        $.getJSON = function(url, success) {
-            var data = {recipes: [
-                        {
-                            "name": "carapulcra",
-                            "description": "Plato típico de Ica",
-                            "imageUrl": "http://comidas.org/carapulcra-de-cerdo.jpg",
-                        }
-                    ]
-                };
-            success(data);
+        recipesView = {
+            bind: function(recipes) {
+                this.recipes = recipes;
+            },
+            recipes: []
         };
+        recipesController = new RecipesController({
+            recipesContainer: recipesContainer,
+            recipesView: recipesView
+        });
     });
 
-    describe('#loadRecipes', function() {
-        it('should retrieve recipes', function() {
+    describe('#loadRecipes()', function() {
+        it('should pass the recipes from the container to the view', function() {
             recipesController.loadRecipes();
-            recipesContainer.recipes.should.have.length(1);
-            recipesView.bound.should.be.truthy;
+            recipesView.recipes.should.have.length(2);
         });
     });
     
-    afterEach(function() {
-        $.getJSON = ajax;
-    });
 });

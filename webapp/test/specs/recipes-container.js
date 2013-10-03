@@ -1,18 +1,12 @@
 describe('RecipesContainer', function() {
     "use strict";
     
-    var recipesContainer;
+    var recipesContainer, recipesRepository;
+    
     beforeEach(function () {
-        recipesContainer = new RecipesContainer();
-    });
-    
-    it('should start with zero recipes', function () {
-        recipesContainer.recipes.should.have.length(0);
-    });
-    
-    describe('#addRecipes', function(){
-        
-        var recipes = [
+        recipesRepository = {};
+        recipesRepository.list = function(callback) {
+            var recipes = [
                 {
                     name: "arroz con pollo",
                     ingredients: [{
@@ -29,10 +23,22 @@ describe('RecipesContainer', function() {
                     description: "comida criolla de arroz y pollo",
                 }
             ];
+            callback(recipes);
+        };
+        recipesContainer = new RecipesContainer(recipesRepository);
+    });
+    
+    it('should start with zero recipes', function () {
+        recipesContainer.recipes.should.have.length(0);
+    });
+    
+    describe('#fetch(callback)', function(){
         
-        it('should add the given recipes', function () {
-            recipesContainer.addRecipes(recipes);
-            recipesContainer.recipes.should.have.length(2);
+        it('should load the given recipes from the repository', function (done) {
+            recipesContainer.fetch(function() {
+                recipesContainer.recipes.should.have.length(2);
+                done();
+            });
         });
         
     });

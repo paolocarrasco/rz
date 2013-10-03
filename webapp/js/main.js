@@ -1,18 +1,16 @@
 (function($){
     $(function() {
-        var recipesContainer = new RecipesContainer(),
-            recipesView = new RecipesView({
-                    recipesContainer: recipesContainer,
-                    element: document.querySelector('.dishes')
-                }),
+        var recipesRepository = new RecipesRepository('js/app/recipes.json', $),
+            recipesContainer = new RecipesContainer(recipesRepository),
+            recipesView = new RecipesView(document.querySelector('.dishes')),
             recipesController = new RecipesController({
                 recipesView: recipesView,
                 recipesContainer: recipesContainer
             }),
             recipesRouter = new RecipesRouter(window, location);
-            recipesRouter.onSelected(function (label) {
-                console.log(label);
-            });
-            recipesController.loadRecipes();
+        recipesRouter.onSelected(function (label) {
+            console.log(label);
+        });
+        recipesController.loadRecipes();
     });
 })(jQuery);

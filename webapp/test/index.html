@@ -8,12 +8,26 @@
   </head>
   <body>
     <div id="mocha"></div>
-    <script src="mocha.js"></script>
-    <script>mocha.setup('bdd')</script>
-    <script src="tests.js"></script>
+    <script src="lib/mocha.js"></script>
+    <script src="lib/chai.js"></script>
+    <script src="../js/vendor/jquery-1.10.1.min.js"></script>
     <script>
-        if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-        else { mocha.run(); }
+        mocha.setup('bdd');
+        var should = chai.should();
+    </script>
+    <script src="../js/app/recipes-router.js"></script>
+    <script src="../js/app/recipes-repository.js"></script>
+    <script src="../js/app/recipes-container.js"></script>
+    <script src="../js/app/recipes-view.js"></script>
+    <script src="../js/app/recipes-controller.js"></script>
+    <script src="specs/recipes-repository.js"></script>
+    <script src="specs/recipes-router.js"></script>
+    <script src="specs/recipes-container.js"></script>
+    <script src="specs/recipes-view.js"></script>
+    <script src="specs/recipes-controller.js"></script>
+    <script>
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
     </script>
   </body>
 </html>

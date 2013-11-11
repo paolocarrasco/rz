@@ -5,7 +5,7 @@
             
         this.loadRecipes = function() {
             recipesContainer.fetch(function() {
-                recipesView.bind(recipesContainer.recipes);
+                recipesView.bind(recipesContainer.recipes());
             });
         };
     };

@@ -1,7 +1,9 @@
 (function($){
     $(function() {
         var recipesRepository = new RecipesRepository('js/app/recipes.json', $),
-            recipesContainer = new RecipesContainer(recipesRepository),
+            recipesContainer = new RecipesContainer([], {
+                repository: recipesRepository
+            }),
             recipesView = new RecipesView(document.querySelector('.dishes')),
             recipesController = new RecipesController({
                 recipesView: recipesView,

@@ -4,10 +4,13 @@ describe('RecipesController', function(){
     var recipesController, recipesView, recipesContainer;
             
     beforeEach(function() {
+        var _recipes;
         recipesContainer = {
-            recipes: [],
+            recipes: function() {
+                return _recipes;
+            },
             fetch: function(callback) {
-                this.recipes = [
+                _recipes = [
                         { name: "carapulcra" }, { name: "rocoto relleno" }
                     ];
                 callback();

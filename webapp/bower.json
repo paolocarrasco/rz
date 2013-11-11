@@ -1,0 +1,28 @@
+{
+  "name": "rz",
+  "version": "0.0.1",
+  "authors": [
+    "Paolo Carrasco <paolo.carrasco@gmail.com>"
+  ],
+  "description": "eRe-Zeta",
+  "main": "js/main.js",
+  "keywords": [
+    "recetas",
+    "peruanas",
+    "comida",
+    "peruana",
+    "recetario",
+    "recipes",
+    "cookbook",
+    "peruvian"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

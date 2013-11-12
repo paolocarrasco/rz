@@ -64,8 +64,20 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
-  
+
+  grunt.registerTask('bower_install', function() {
+    /* global require */
+    var bower = require('bower');
+    var done = this.async();
+    
+    bower.commands
+      .install()
+      .on('end', function() {
+        done();
+      });
+  });
+
   // Default task.
-  grunt.registerTask('default', ['jshint', 'mocha_phantomjs']);
+  grunt.registerTask('default', ['jshint', 'bower_install', 'mocha_phantomjs']);
 
 };

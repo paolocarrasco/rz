@@ -1,4 +1,4 @@
-(function($){
+!(function($){
     $(function() {
         var recipesRepository = new RecipesRepository('js/app/recipes.json', $),
             recipesContainer = new RecipesContainer([], {

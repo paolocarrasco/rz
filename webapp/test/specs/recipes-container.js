@@ -15,7 +15,7 @@ describe('RecipesContainer', function() {
   describe('#fetch(callback)', function(){
     it('should load the given recipes from the datasource', function (done) {
       Backbone.sync = function(method, model, options) {
-        options.success([new Recipe(), new Recipe()]);
+        options.success({recipes: [new Recipe(), new Recipe()]});
       };
 
       recipesContainer.fetch({

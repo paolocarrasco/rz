@@ -21,8 +21,9 @@ describe('RecipesView', function () {
                 ingredients: [{name: 'aji'}, {name: 'gallina'}]
             });
         recipes = new RecipesContainer([recipe1, recipe2]);
-        recipesView = new RecipesView();
-        recipesView.collection = recipes;
+        recipesView = new RecipesView({
+            collection: recipes
+        });
     });
 
     afterEach(function() {

@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         eqnull: true,
         browser: true,
         predef: [
-          'it', 
+          'it',
           'describe',
           'should',
           'beforeEach',
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       app_files: {
-        src: ['webapp/js/app/**/*.js']  
+        src: ['webapp/js/app/**/*.js']
       },
       test_files: {
         src: ['webapp/test/specs/**/*.js']
@@ -45,8 +45,8 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       app_files: {
-        files: '<%= jshint.app_files.src %>',
-        tasks: ['jshint:app_files']
+        files: ['<%= jshint.app_files.src %>', 'webapp/js/main.js'],
+        tasks: ['jshint:app_files','mocha_phantomjs']
       },
       test_files: {
         files: '<%= jshint.test_files.src %>',
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
     /* global require */
     var bower = require('bower');
     var done = this.async();
-    
+
     bower.commands
       .install()
       .on('end', function() {

@@ -30,6 +30,17 @@ describe('RecipesView', function () {
         recipeListElement.innerHTML = '';
     });
 
+    describe('binding to collection', function() {
+
+        it('should render if the collection added a new recipe', function(done) {
+            recipesView.on('render', function() {
+                done();
+            });
+            recipes.add(new Recipe());
+        });
+
+    });
+
     describe('#bind(recipes)', function() {
 
         it('should bind the recipes properties with the template', function () {
@@ -43,13 +54,6 @@ describe('RecipesView', function () {
             recipesView.render();
             recipesView.el.children[0].querySelector('section>p').innerHTML.should.match(/arroz, pollo/);
             recipesView.el.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
-        });
-
-        it('should render if the collection added a new recipe', function(done) {
-            recipesView.on('render', function() {
-                done();
-            });
-            recipes.add(new Recipe());
         });
 
     });

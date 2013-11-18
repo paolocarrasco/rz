@@ -2,6 +2,9 @@
 !(function(module) {
     'use strict';
     var RecipesView = module.Backbone.View.extend({
+        initialize: function() {
+            this.collection.bind('reset add', this.render, this);
+        },
         tagName: 'section',
         template: '<article><img src="{{imageUrl}}" alt="{{name}}" ><header><h1 class="name">{{name}}</h1><p>{{description}}</p></header><section><h2>Ingredientes principales</h2><p>{{#ingredients}}{{name}}, {{/ingredients}}</p></section></article>',
         render: function() {
@@ -13,6 +16,7 @@
                 );
             });
             this.$el.html(recipesBounded.join(''));
+            this.trigger('render');
             return this;
         }
     });

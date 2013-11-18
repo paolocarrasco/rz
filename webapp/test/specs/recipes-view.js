@@ -10,7 +10,7 @@ describe('RecipesView', function () {
     beforeEach(function () {
         var recipe1 = new Recipe({
                 name: "arroz con pollo",
-                imageUrl: 'Arroz-con-Pollo.jpg',
+                imageUrl: 'http://upload.wikimedia.org/wikipedia/commons/3/39/Arroz-con-Pollo.jpg',
                 description: "comida criolla de arroz y pollo",
                 ingredients: [{name: 'arroz'}, {name: 'pollo'}]
             }),
@@ -31,6 +31,7 @@ describe('RecipesView', function () {
     });
 
     describe('#bind(recipes)', function() {
+
         it('should bind the recipes properties with the template', function () {
             recipeListElement.children.should.have.length(0);
             recipesView.render();
@@ -43,6 +44,14 @@ describe('RecipesView', function () {
             recipesView.el.children[0].querySelector('section>p').innerHTML.should.match(/arroz, pollo/);
             recipesView.el.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
         });
+
+        it('should render if the collection added a new recipe', function(done) {
+            recipesView.on('render', function() {
+                done();
+            });
+            recipes.add(new Recipe());
+        });
+
     });
 
 });

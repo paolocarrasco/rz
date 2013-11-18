@@ -2,13 +2,9 @@
     $(function() {
         var recipesContainer = new RecipesContainer(),
             recipesView = new RecipesView({
+                collection: recipesContainer,
                 el: '.dishes'
             });
-        recipesView.collection = recipesContainer;
-        recipesContainer.fetch({
-            success: function() {
-                recipesView.render();
-            }
-        });
+        recipesContainer.fetch();
     });
 })(jQuery);

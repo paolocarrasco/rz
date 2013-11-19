@@ -1,4 +1,4 @@
-/* globals RecipesView, Recipe, RecipesContainer */
+/* globals RecipesView, Recipe, RecipesContainer, $ */
 describe('RecipesView', function () {
     'use strict';
     var recipesView, recipes, recipeListElement;
@@ -33,9 +33,7 @@ describe('RecipesView', function () {
     describe('binding to collection', function() {
 
         it('should render if the collection added a new recipe', function(done) {
-            recipesView.on('render', function() {
-                done();
-            });
+            recipesView.on('render', done);
             recipes.add(new Recipe());
         });
 
@@ -54,6 +52,32 @@ describe('RecipesView', function () {
             recipesView.render();
             recipesView.el.children[0].querySelector('section>p').innerHTML.should.match(/arroz, pollo/);
             recipesView.el.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
+        });
+
+    });
+
+
+    describe('#on(\'selected\', handler)', function() {
+
+        it('should call the registered handler when a recipe is selected', function(done) {
+            recipesView.on('selected', done);
+            recipesView.select();
+        });
+
+        it('should send the label to the handler', function(done) {
+            recipesView.on('selected', function(label) {
+                label.should.match(/arroz-chaufa/);
+                done();
+            });
+            recipesView.select('arroz-chaufa');
+        });
+
+        it('should call the event when the link of a recipe is clicked', function(done) {
+            recipesView.on('selected', function() {
+                done();
+            });
+            recipesView.render();
+            $(recipesView.el.children[0].querySelector('h1.name')).click();
         });
 
     });

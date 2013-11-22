@@ -1,32 +1,28 @@
 /* globals RecipesRouter, Backbone */
 describe('RecipesRouter', function() {
-    var recipesRouter, recipesView;
+    var recipesRouter, recipesContainer;
 
     beforeEach(function() {
         var _callback;
-        recipesView = {
-            render: function() {
+        recipesContainer = {
+            fetch: function() {
                 _callback && _callback();
             },
-            setCallbackOnRender: function(callback) {
+            setCallbackOnFetch: function(callback) {
                 _callback = callback;
             }
         };
         recipesRouter = new RecipesRouter({
-            view: recipesView
+            collection: recipesContainer
         });
-    });
-
-    afterEach(function() {
-        Backbone.history.stop();
+        Backbone.history.start({root: "/test/", pushState: false});
     });
 
     describe('#navigate(root)', function() {
 
-        it('should render the recipesView if the url is the root', function(done) {
-            recipesView.setCallbackOnRender(done);
-            recipesRouter.navigate('');
-            Backbone.history.start({root: "/test", pushState: false});
+        it('should fetch the recipes with the container if the url is the root', function(done) {
+            recipesContainer.setCallbackOnFetch(done);
+            recipesRouter.navigate('/getItems', { trigger: true });
         });
 
     });

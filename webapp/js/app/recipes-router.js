@@ -1,15 +1,15 @@
 !(function (module) {
     'use strict';
-    var _view;
+    var _collection;
     var RecipesRouter = module.Backbone.Router.extend({
         initialize: function(options) {
-            _view = options.view;
+            _collection = options.collection;
         },
         routes: {
-            '': 'index'
+            'getItems': 'index'
         },
         index: function() {
-            _view.render();
+            _collection.fetch();
         }
     });
     module.RecipesRouter = RecipesRouter;

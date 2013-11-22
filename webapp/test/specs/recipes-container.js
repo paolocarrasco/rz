@@ -1,47 +1,29 @@
-/* global RecipesContainer: true */
+/* global Backbone, RecipesContainer, Recipe */
 describe('RecipesContainer', function() {
-    "use strict";
-    
-    var recipesContainer, recipesRepository;
-    
-    beforeEach(function () {
-        recipesRepository = {};
-        recipesRepository.list = function(callback) {
-            var recipes = [
-                {
-                    name: "arroz con pollo",
-                    ingredients: [{
-                        name: "arroz"
-                    }],
-                    description: "comida criolla de arroz y pollo",
-                },
-                {
-                    name: "aji de gallina",
-                    ingredients: [{
-                        name: "aji",
-                        quantity: 2
-                    }],
-                    description: "comida criolla de arroz y pollo",
-                }
-            ];
-            callback(recipes);
-        };
-        recipesContainer = new RecipesContainer(recipesRepository);
+  "use strict";
+
+  var recipesContainer;
+
+  beforeEach(function () {
+    recipesContainer = new RecipesContainer();
+  });
+
+  it('should start with zero recipes', function () {
+    recipesContainer.should.have.length(0);
+  });
+
+  describe('#fetch(callback)', function(){
+    it('should load the given recipes from the datasource', function (done) {
+      Backbone.sync = function(method, model, options) {
+        options.success({recipes: [new Recipe(), new Recipe()]});
+      };
+
+      recipesContainer.fetch({
+        success: function() {
+          recipesContainer.should.have.length(2);
+          done();
+        }
+      });
     });
-    
-    it('should start with zero recipes', function () {
-        recipesContainer.recipes.should.have.length(0);
-    });
-    
-    describe('#fetch(callback)', function(){
-        
-        it('should load the given recipes from the repository', function (done) {
-            recipesContainer.fetch(function() {
-                recipesContainer.recipes.should.have.length(2);
-                done();
-            });
-        });
-        
-    });
-        
+  });
 });

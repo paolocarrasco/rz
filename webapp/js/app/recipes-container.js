@@ -1,17 +1,11 @@
 !(function(module) {
-    'use strict';
-    var RecipesContainer = function(recipesRepository) {
-        var recipes = [],
-            repository = recipesRepository;
-        this.fetch = function (callback) {
-            repository.list(function(fetchedRecipes) {
-                recipes = fetchedRecipes;
-                callback();
-            });
-        };
-        this.__defineGetter__("recipes", function(){
-            return recipes;
-        });
-    };
-    module.RecipesContainer = RecipesContainer;
+  'use strict';
+  var RecipesContainer = module.Backbone.Collection.extend({
+    model: module.Recipe,
+    url: 'js/app/recipes.json',
+    parse: function(data) {
+      return data.recipes;
+    }
+  });
+  module.RecipesContainer = RecipesContainer;
 })(this);

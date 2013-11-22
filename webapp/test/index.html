@@ -4,27 +4,27 @@
     <title>Mocha</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mocha.css" />
+    <link rel="stylesheet" href="../bower_components/mocha/mocha.css" />
   </head>
   <body>
     <div id="mocha"></div>
-    <script src="lib/mocha.js"></script>
-    <script src="lib/chai.js"></script>
+    <script src="../bower_components/mocha/mocha.js"></script>
+    <script src="../bower_components/chai/chai.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script>
     <script src="../js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="../bower_components/backbone/backbone-min.js"></script>
+    <script src="../bower_components/mustache/mustache.js"></script>
     <script>
         mocha.setup('bdd');
         var should = chai.should();
     </script>
     <script src="../js/app/recipes-router.js"></script>
-    <script src="../js/app/recipes-repository.js"></script>
+    <script src="../js/app/recipe.js"></script>
     <script src="../js/app/recipes-container.js"></script>
     <script src="../js/app/recipes-view.js"></script>
-    <script src="../js/app/recipes-controller.js"></script>
-    <script src="specs/recipes-repository.js"></script>
     <script src="specs/recipes-router.js"></script>
     <script src="specs/recipes-container.js"></script>
     <script src="specs/recipes-view.js"></script>
-    <script src="specs/recipes-controller.js"></script>
     <script>
       if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
       else { mocha.run(); }

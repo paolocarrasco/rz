@@ -1,16 +1,14 @@
-(function($){
+!(function($){
     $(function() {
-        var recipesRepository = new RecipesRepository('js/app/recipes.json', $),
-            recipesContainer = new RecipesContainer(recipesRepository),
-            recipesView = new RecipesView(document.querySelector('.dishes')),
-            recipesController = new RecipesController({
-                recipesView: recipesView,
-                recipesContainer: recipesContainer
+        var recipesContainer = new RecipesContainer(),
+            recipesView = new RecipesView({
+                collection: recipesContainer,
+                el: '.dishes'
             }),
-            recipesRouter = new RecipesRouter(window, location);
-        recipesRouter.onSelected(function (label) {
-            console.log(label);
-        });
-        recipesController.loadRecipes();
+            recipesRouter = new RecipesRouter({
+                collection: recipesContainer
+            });
+        Backbone.history.start({ pushState: false });
+        recipesRouter.navigate('/getItems', { trigger: true });
     });
 })(jQuery);

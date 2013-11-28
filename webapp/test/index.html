@@ -14,9 +14,20 @@
     <script src="../js/vendor/jquery-1.10.1.min.js"></script>
     <script src="../bower_components/backbone/backbone-min.js"></script>
     <script src="../bower_components/mustache/mustache.js"></script>
+<!--
+    <script type="text/javascript" src="vendor/blanket.js"
+        data-cover-flags="branchTracking"
+        data-cover-adapter="vendor/mocha-blanket.js"
+        data-cover-only="../js/app"></script>
+    <script type="text/javascript" src="vendor/mocha-blanket.js"></script>
+ -->
     <script>
         mocha.setup('bdd');
         var should = chai.should();
+
+        if (window.PHANTOMJS) {
+            blanket.options("reporter", "vendor/grunt-reporter.js");
+        }
     </script>
     <script src="../js/app/recipes-router.js"></script>
     <script src="../js/app/recipe.js"></script>

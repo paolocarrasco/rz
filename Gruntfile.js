@@ -46,22 +46,16 @@ module.exports = function(grunt) {
       },
       app_files: {
         files: ['<%= jshint.app_files.src %>', 'webapp/js/main.js'],
-        tasks: ['jshint:app_files','mocha_phantomjs']
+        tasks: ['jshint:app_files','blanket_mocha']
       },
       test_files: {
         files: '<%= jshint.test_files.src %>',
-        tasks: ['jshint:test_files','mocha_phantomjs']
+        tasks: ['jshint:test_files','blanket_mocha']
       },
       test_config: {
         files: 'webapp/test/index.html',
-        tasks: 'mocha_phantomjs'
+        tasks: 'blanket_mocha'
       }
-    },
-    mocha_phantomjs: {
-        options: {
-          'reporter': 'spec'
-        },
-        all: 'webapp/test/**/*.html'
     },
     blanket_mocha : {
         all : ['webapp/test/index.html'],
@@ -97,6 +91,6 @@ module.exports = function(grunt) {
   grunt.registerTask('coverage', ['blanket_mocha']);
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'bower_install', 'mocha_phantomjs']);
+  grunt.registerTask('default', ['jshint', 'bower_install', 'blanket_mocha']);
 
 };

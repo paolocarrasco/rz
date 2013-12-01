@@ -62,7 +62,10 @@ module.exports = function(grunt) {
         options : {
             log : true,
             threshold: 80,
-            reporter : 'mocha-unfunk-reporter'
+            reporter : 'mocha-unfunk-reporter',
+            globalThreshold : 80,
+            moduleThreshold : 80,
+            modulePattern : "./(.*?)/"
         }
     }
   });

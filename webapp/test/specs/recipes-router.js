@@ -15,7 +15,14 @@ describe('RecipesRouter', function() {
         recipesRouter = new RecipesRouter({
             collection: recipesContainer
         });
-        Backbone.history.start({root: "/test/", pushState: false});
+
+        try {
+            Backbone.history.start({root: "/test/", pushState: false});
+        }
+        catch(e) {
+            // Backbone history should be started only once
+            // if not it raises an exception (useless in tests)
+        }
     });
 
     describe('#navigate(root)', function() {

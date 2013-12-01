@@ -67,6 +67,7 @@ module.exports = function(grunt) {
         all : ['webapp/test/index.html'],
         options : {
             log : true,
+            threshold: 80,
             reporter : 'mocha-unfunk-reporter'
         }
     }

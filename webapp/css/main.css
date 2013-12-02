@@ -10,6 +10,10 @@ textarea {
     color: #222;
 }
 
+html, body {
+    background-image: url(../img/lightpaperfibers.png);
+}
+
 body {
     font-size: 1em;
     line-height: 1.4;
@@ -61,7 +65,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px 'Life Savers', Courier;
 }
 
 .wrapper {
@@ -74,11 +78,11 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid rgba(228, 77, 38, 0.6);
 }
 
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid  rgba(228, 77, 38, 0.6);
 }
 
 .header-container,
@@ -109,7 +113,11 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #e44d26;
+    background: rgba(228, 77, 38, 0.6);
+}
+
+nav a:hover {
+    background: rgba(228, 77, 38, 1);
 }
 
 nav a:hover,
@@ -134,7 +142,7 @@ nav a:hover {
 }
 
 .main aside {
-    color: white;
+    color: #530000;
     padding: 0px 5% 10px;
 }
 
@@ -181,12 +189,12 @@ font-family: 'Oleo Script Swash Caps', cursive;
 font-family: 'Life Savers', cursive;
 */
 
-body, html {
-    font-family: 'Life Savers', cursive;
-}
-
 .header-container {
     font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.header-container, .main aside {
+    background-image: url(../img/purty_wood.png);
 }
 
 .header-container h1 {
@@ -196,6 +204,12 @@ body, html {
     text-decoration: none;
     letter-spacing: 0.05em;
     line-height: 1.4;
+    text-shadow: 0.04em 0.04em 0.5em #530000;
+}
+
+.dishes article {
+    font-size: 1em;
+    margin: 1em 0;
 }
 
 .dishes article img {
@@ -205,7 +219,7 @@ body, html {
     -webkit-box-shadow: 2px 2px 3px #ccc;
     -moz-box-shadow: 2px 2px 3px #ccc;
     box-shadow: 2px 2px 3px #ccc;
-    margin: 20px;
+    margin: 0 20px;
 }
 
 .dishes article header, .dishes article section {
@@ -216,12 +230,9 @@ body, html {
     margin-bottom: 0;
 }
 
-.dishes article {
-    font-size: 1em;
-}
-
 .dishes article h1 {
     font-size: 1.4em;
+    margin-top: 0;
 }
 
 .dishes article h1:first-letter {

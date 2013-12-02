@@ -10,8 +10,12 @@ textarea {
     color: #222;
 }
 
+html, body {
+    background-image: url(../img/lightpaperfibers.png);
+}
+
 body {
-    font-size: .8em;
+    font-size: 1em;
     line-height: 1.4;
 }
 
@@ -61,7 +65,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px 'Life Savers', Courier;
 }
 
 .wrapper {
@@ -74,16 +78,14 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid rgba(228, 77, 38, 0.6);
 }
 
-.footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid  rgba(228, 77, 38, 0.6);
 }
 
 .header-container,
-.footer-container,
 .main aside {
     background: #f16529;
 }
@@ -111,7 +113,11 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #e44d26;
+    background: rgba(228, 77, 38, 0.6);
+}
+
+nav a:hover {
+    background: rgba(228, 77, 38, 1);
 }
 
 nav a:hover,
@@ -136,12 +142,11 @@ nav a:hover {
 }
 
 .main aside {
-    color: white;
+    color: #530000;
     padding: 0px 5% 10px;
 }
 
 .footer-container footer {
-    color: white;
     padding: 20px 0;
 }
 
@@ -156,18 +161,69 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.dishes img {
-    width: auto;
-    height: 150px;
+
+/*http://www.google.com/fonts#ReviewPlace:refine/Collection:Oleo+Script+Swash+Caps:400,700|Life+Savers:400,700*/
+
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Life Savers'), local('LifeSavers-Regular'), url(http://themes.googleusercontent.com/static/fonts/lifesavers/v3/_yRJoxB8KMO25_gswqItc7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Life Savers Bold'), local('LifeSavers-Bold'), url(http://themes.googleusercontent.com/static/fonts/lifesavers/v3/THQKqChyYUm97rNPVFdGGRbnBKKEOwRKgsHDreGcocg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Oleo Script Swash Caps';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oleo Script Swash Caps'), local('OleoScriptSwashCaps-Regular'), url(http://themes.googleusercontent.com/static/fonts/oleoscriptswashcaps/v1/vdWhGqsBUAP-FF3NOYTe4pakf2VKGDa1aHLWGf__tlnr7w4p9aSvGirXi6XmeXNA.woff) format('woff');
+}
+
+/*
+Usage:
+font-family: 'Oleo Script Swash Caps', cursive;
+font-family: 'Life Savers', cursive;
+*/
+
+.header-container {
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.header-container, .main aside {
+    background-image: url(../img/purty_wood.png);
+}
+
+.header-container h1 {
+    font-style: normal;
+    font-size: 2.5em;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    text-shadow: 0.04em 0.04em 0.5em #530000;
+}
+
+.dishes article {
+    font-size: 1em;
+    margin: 1em 0;
+}
+
+.dishes article img {
+    height: auto;
+    width: 150px;
     float: left;
     -webkit-box-shadow: 2px 2px 3px #ccc;
     -moz-box-shadow: 2px 2px 3px #ccc;
     box-shadow: 2px 2px 3px #ccc;
-    margin: 1em;
+    margin: 0 20px;
 }
 
-.dishes article {
-    font-size: .7em;
+.dishes article header, .dishes article section {
+    margin-left: 190px;
 }
 
 .dishes article h1, .dishes article h2 {
@@ -175,7 +231,8 @@ nav a:hover {
 }
 
 .dishes article h1 {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    margin-top: 0;
 }
 
 .dishes article h1:first-letter {
@@ -183,15 +240,15 @@ nav a:hover {
 }
 
 .dishes article h2 {
-    font-size: 1em;
-}
-
-.dishes article {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .dishes article p {
     margin: .3em 0;
+}
+
+.main aside, footer {
+    margin-left: 62%;
 }
 
 .main aside p {
@@ -200,12 +257,19 @@ nav a:hover {
     text-overflow:ellipsis;
 }
 
+.main aside img {
+    margin: 5px auto;
+    display: block;
+    height: auto;
+    width: 210px;
+    -webkit-box-shadow: 2px 2px 20px #470306;
+    -moz-box-shadow: 2px 2px 20px #470306;
+    box-shadow: 2px 2px 20px #470306;
+}
 
-
-
-
-
-
+.footer-container h3, .footer-container p {
+    display: inline;
+}
 
 /* ==========================================================================
    Media Queries
@@ -246,7 +310,34 @@ nav a:hover {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 480px) {
+
+    .dishes article img {
+        margin: 1em auto;
+        float: none;
+        display: block;
+    }
+
+    .dishes article header, .dishes article section {
+        margin-left: 0;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 813px) {
+
+    .main aside, .main footer {
+        margin-left: 0;
+    }
+
+    .main aside {
+        margin-top: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 813px) {
 
 /* ====================
     WIDE: CSS3 Effects
@@ -258,6 +349,8 @@ nav a:hover {
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
     }
+
+
 
 /* ============
     WIDE: Menu
@@ -281,10 +374,6 @@ nav a:hover {
         width: 57%;
     }
 
-    .main aside {
-        float: right;
-        width: 28%;
-    }
 }
 
 @media only screen and (min-width: 1140px) {

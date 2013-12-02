@@ -14,20 +14,29 @@
     <script src="../js/vendor/jquery-1.10.1.min.js"></script>
     <script src="../bower_components/backbone/backbone-min.js"></script>
     <script src="../bower_components/mustache/mustache.js"></script>
-    <script>
-        mocha.setup('bdd');
-        var should = chai.should();
-    </script>
+
     <script src="../js/app/recipes-router.js"></script>
     <script src="../js/app/recipe.js"></script>
     <script src="../js/app/recipes-container.js"></script>
     <script src="../js/app/recipes-view.js"></script>
+
+    <script type="text/javascript"src="vendor/blanket.js"
+        data-cover-flags="ignoreError"
+        data-cover-adapter="vendor/mocha-blanket.js"
+        data-cover-only="js/app"></script>
+
+    <script>
+        mocha.setup('bdd');
+        var should = chai.should();
+    </script>
+
     <script src="specs/recipes-router.js"></script>
     <script src="specs/recipes-container.js"></script>
     <script src="specs/recipes-view.js"></script>
-    <script>
-      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-      else { mocha.run(); }
+    <script type="text/javascript">
+        if (window.PHANTOMJS) {
+            blanket.options("reporter", "vendor/grunt-reporter.js");
+        }
     </script>
   </body>
 </html>

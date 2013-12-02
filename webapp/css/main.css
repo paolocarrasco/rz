@@ -11,7 +11,7 @@ textarea {
 }
 
 body {
-    font-size: .8em;
+    font-size: 1em;
     line-height: 1.4;
 }
 
@@ -77,13 +77,11 @@ body {
     border-bottom: 20px solid #e44d26;
 }
 
-.footer-container,
 .main aside {
     border-top: 20px solid #e44d26;
 }
 
 .header-container,
-.footer-container,
 .main aside {
     background: #f16529;
 }
@@ -141,7 +139,6 @@ nav a:hover {
 }
 
 .footer-container footer {
-    color: white;
     padding: 20px 0;
 }
 
@@ -156,26 +153,75 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.dishes img {
-    width: auto;
-    height: 150px;
+
+/*http://www.google.com/fonts#ReviewPlace:refine/Collection:Oleo+Script+Swash+Caps:400,700|Life+Savers:400,700*/
+
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Life Savers'), local('LifeSavers-Regular'), url(http://themes.googleusercontent.com/static/fonts/lifesavers/v3/_yRJoxB8KMO25_gswqItc7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Life Savers Bold'), local('LifeSavers-Bold'), url(http://themes.googleusercontent.com/static/fonts/lifesavers/v3/THQKqChyYUm97rNPVFdGGRbnBKKEOwRKgsHDreGcocg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Oleo Script Swash Caps';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oleo Script Swash Caps'), local('OleoScriptSwashCaps-Regular'), url(http://themes.googleusercontent.com/static/fonts/oleoscriptswashcaps/v1/vdWhGqsBUAP-FF3NOYTe4pakf2VKGDa1aHLWGf__tlnr7w4p9aSvGirXi6XmeXNA.woff) format('woff');
+}
+
+/*
+Usage:
+font-family: 'Oleo Script Swash Caps', cursive;
+font-family: 'Life Savers', cursive;
+*/
+
+body, html {
+    font-family: 'Life Savers', cursive;
+}
+
+.header-container {
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.header-container h1 {
+    font-style: normal;
+    font-size: 2.5em;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+.dishes article img {
+    height: auto;
+    width: 150px;
     float: left;
     -webkit-box-shadow: 2px 2px 3px #ccc;
     -moz-box-shadow: 2px 2px 3px #ccc;
     box-shadow: 2px 2px 3px #ccc;
-    margin: 1em;
+    margin: 20px;
 }
 
-.dishes article {
-    font-size: .7em;
+.dishes article header, .dishes article section {
+    margin-left: 190px;
 }
 
 .dishes article h1, .dishes article h2 {
     margin-bottom: 0;
 }
 
+.dishes article {
+    font-size: 1em;
+}
+
 .dishes article h1 {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .dishes article h1:first-letter {
@@ -183,15 +229,15 @@ nav a:hover {
 }
 
 .dishes article h2 {
-    font-size: 1em;
-}
-
-.dishes article {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .dishes article p {
     margin: .3em 0;
+}
+
+.main aside, footer {
+    margin-left: 57%;
 }
 
 .main aside p {
@@ -200,12 +246,9 @@ nav a:hover {
     text-overflow:ellipsis;
 }
 
-
-
-
-
-
-
+.footer-container h3, .footer-container p {
+    display: inline;
+}
 
 /* ==========================================================================
    Media Queries
@@ -281,10 +324,6 @@ nav a:hover {
         width: 57%;
     }
 
-    .main aside {
-        float: right;
-        width: 28%;
-    }
 }
 
 @media only screen and (min-width: 1140px) {

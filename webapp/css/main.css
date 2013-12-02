@@ -237,13 +237,23 @@ body, html {
 }
 
 .main aside, footer {
-    margin-left: 57%;
+    margin-left: 62%;
 }
 
 .main aside p {
     white-space: nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
+}
+
+.main aside img {
+    margin: 5px auto;
+    display: block;
+    height: auto;
+    width: 210px;
+    -webkit-box-shadow: 2px 2px 20px #470306;
+    -moz-box-shadow: 2px 2px 20px #470306;
+    box-shadow: 2px 2px 20px #470306;
 }
 
 .footer-container h3, .footer-container p {
@@ -289,7 +299,34 @@ body, html {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 480px) {
+
+    .dishes article img {
+        margin: 1em auto;
+        float: none;
+        display: block;
+    }
+
+    .dishes article header, .dishes article section {
+        margin-left: 0;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 813px) {
+
+    .main aside, .main footer {
+        margin-left: 0;
+    }
+
+    .main aside {
+        margin-top: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 813px) {
 
 /* ====================
     WIDE: CSS3 Effects
@@ -301,6 +338,8 @@ body, html {
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
     }
+
+
 
 /* ============
     WIDE: Menu

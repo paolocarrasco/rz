@@ -253,6 +253,10 @@ font-family: 'Life Savers', cursive;
     margin: .3em 0;
 }
 
+.dishes article p span:not(:last-child):after {
+    content: ","
+}
+
 .main aside, footer {
     margin-left: 62%;
 }

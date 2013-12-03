@@ -9,15 +9,15 @@ describe('RecipesView', function () {
 
     beforeEach(function () {
         var recipe1 = new Recipe({
-                name: "arroz con pollo",
-                imageUrl: 'http://upload.wikimedia.org/wikipedia/commons/3/39/Arroz-con-Pollo.jpg',
-                description: "comida criolla de arroz y pollo",
+                name: 'arroz con pollo',
+                imageUrl: '/img/arroz-con-pollo.jpg',
+                description: 'comida criolla de arroz y pollo',
                 ingredients: [{name: 'arroz'}, {name: 'pollo'}]
             }),
             recipe2 = new Recipe({
-                name: "aji de gallina",
-                description: "comida criolla de arroz y gallina",
-                imageUrl: 'http://1.bp.blogspot.com/-PsmY86g6DIE/UKBRP1M96UI/AAAAAAAAARc/30V5dNM-axs/s1600/AJI+DE+GALLINA.jpg',
+                name: 'aji de gallina',
+                description: 'comida criolla de arroz y gallina',
+                imageUrl: '/img/aji-gallina.jpg',
                 ingredients: [{name: 'aji'}, {name: 'gallina'}]
             });
         recipes = new RecipesContainer([recipe1, recipe2]);
@@ -50,8 +50,8 @@ describe('RecipesView', function () {
 
         it('should render every ingredient of the recipe', function() {
             recipesView.render();
-            recipesView.el.children[0].querySelector('section>p').innerHTML.should.match(/arroz, pollo/);
-            recipesView.el.children[1].querySelector('section>p').innerHTML.should.match(/aji, gallina/);
+            recipesView.el.children[0].querySelector('section>p').innerText.should.match(/arroz pollo/);
+            recipesView.el.children[1].querySelector('section>p').innerText.should.match(/aji gallina/);
         });
 
     });

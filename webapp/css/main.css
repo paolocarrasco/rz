@@ -212,6 +212,11 @@ font-family: 'Life Savers', cursive;
     margin: 0.5em 0;
     border-bottom: 0.5em solid rgba(0, 0, 0, 0.5);
     padding: 1em 0;
+    cursor: pointer;
+}
+
+.dishes article:hover {
+    background-color: rgba(250, 133, 0, 0.1);
 }
 
 .dishes article:last-child {

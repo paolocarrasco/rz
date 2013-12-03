@@ -10,12 +10,14 @@ describe('RecipesView', function () {
     beforeEach(function () {
         var recipe1 = new Recipe({
                 name: 'arroz con pollo',
+                label: 'arroz-con-pollo',
                 imageUrl: '/img/arroz-con-pollo.jpg',
                 description: 'comida criolla de arroz y pollo',
                 ingredients: [{name: 'arroz'}, {name: 'pollo'}]
             }),
             recipe2 = new Recipe({
                 name: 'aji de gallina',
+                label: 'aji-gallina',
                 description: 'comida criolla de arroz y gallina',
                 imageUrl: '/img/aji-gallina.jpg',
                 ingredients: [{name: 'aji'}, {name: 'gallina'}]
@@ -59,25 +61,13 @@ describe('RecipesView', function () {
 
     describe('#on(\'selected\', handler)', function() {
 
-        it('should call the registered handler when a recipe is selected', function(done) {
-            recipesView.on('selected', done);
-            recipesView.select();
-        });
-
-        it('should send the label to the handler', function(done) {
-            recipesView.on('selected', function(label) {
-                label.should.match(/arroz-chaufa/);
-                done();
-            });
-            recipesView.select('arroz-chaufa');
-        });
-
         it('should call the event when the link of a recipe is clicked', function(done) {
-            recipesView.on('selected', function() {
+            recipesView.on('selected', function(label) {
+                label.should.match(/arroz-con-pollo/);
                 done();
             });
             recipesView.render();
-            $(recipesView.el.children[0].querySelector('h1.name')).click();
+            $(recipesView.el.children[0]).click();
         });
 
     });

@@ -209,7 +209,13 @@ font-family: 'Life Savers', cursive;
 
 .dishes article {
     font-size: 1em;
-    margin: 1em 0;
+    margin: 0.5em 0;
+    border-bottom: 0.5em solid rgba(0, 0, 0, 0.5);
+    padding: 1em 0;
+}
+
+.dishes article:last-child {
+    border-bottom-style: none;
 }
 
 .dishes article img {

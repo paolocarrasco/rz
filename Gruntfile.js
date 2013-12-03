@@ -1,4 +1,4 @@
-/*global module, require */
+/*global module */
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -78,17 +78,9 @@ module.exports = function(grunt) {
     }
   }(grunt.file.readJSON("package.json").devDependencies));
 
-  grunt.registerTask('bower_install', function() {
-    var bower = require('bower');
-    var endOfTask = this.async();
-
-    bower.commands
-      .install()
-      .on('end', endOfTask);
-  });
   grunt.registerTask('coverage', ['blanket_mocha']);
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'bower_install', 'blanket_mocha']);
+  grunt.registerTask('default', ['jshint', 'blanket_mocha']);
 
 };

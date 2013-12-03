@@ -4,7 +4,8 @@
   "description": "Peruvian Recipes",
   "main": "index.js",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -31,10 +32,10 @@
     "grunt-blanket-mocha": "~0.3.3",
     "grunt": ">=0.4.1",
     "grunt-contrib-jshint": "*",
-    "grunt-contrib-watch": "*",
-    "bower": ">=1.2.7"
+    "grunt-contrib-watch": "*"
   },
   "dependencies": {
+    "bower": ">=1.2.7",
     "express": ">=3.4.4"
   }
 }

@@ -70,26 +70,21 @@ module.exports = function(grunt) {
     }
   });
 
-  require('mocha-unfunk-reporter').option({
-      "reportPending" : true
-  });
-
-  // loading all the dependency tasks
-  for (var key in grunt.file.readJSON("package.json").devDependencies) {
-      if (key !== "grunt" && key.indexOf("grunt") === 0) {
-          grunt.loadNpmTasks(key);
-      }
-  }
+  (function loadGruntTasksFrom(devDependencies) {
+    for (var key in devDependencies) {
+        if (key.indexOf("grunt") === 0 && key !== "grunt") {
+             grunt.loadNpmTasks(key);
+         }
+    }
+  }(grunt.file.readJSON("package.json").devDependencies));
 
   grunt.registerTask('bower_install', function() {
     var bower = require('bower');
-    var done = this.async();
+    var endOfTask = this.async();
 
     bower.commands
       .install()
-      .on('end', function() {
-        done();
-      });
+      .on('end', endOfTask);
   });
   grunt.registerTask('coverage', ['blanket_mocha']);
 

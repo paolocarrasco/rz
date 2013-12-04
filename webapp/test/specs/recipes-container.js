@@ -1,6 +1,6 @@
 /* global Backbone, RecipesContainer, Recipe */
 describe('RecipesContainer', function() {
-  "use strict";
+  'use strict';
 
   var recipesContainer;
 

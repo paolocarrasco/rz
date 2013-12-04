@@ -26,7 +26,7 @@
     },
     events: {
       'click': 'select'
-    },
+    }
   });
 
   module.RecipesView = RecipesView;

@@ -1,17 +1,20 @@
 {
-  "curly": true,
+  "supernew": false,
+  "quotmark": "single",
+  "maxlen": 80,
+  "latedef": true,
   "eqeqeq": true,
+  "curly": true,
+  "indent": 2,
+  "camelcase": true,
+  "newcap": true,
+  "strict": true,
+  "browser": true,
   "expr": true,
   "immed": true,
-  "latedef": true,
-  "newcap": true,
   "noarg": true,
-  "sub": true,
   "undef": true,
   "unused": true,
-  "boss": true,
-  "eqnull": true,
-  "browser": true,
   "predef": [
     "it",
     "describe",
@@ -22,3 +25,4 @@
     "after"
   ]
 }
+

@@ -1,6 +1,8 @@
-/*global module */
+/* jshint camelcase: false */
+/* global module */
 module.exports = function(grunt) {
 
+  'use strict';
   // Project configuration.
   grunt.initConfig({
     // Task configuration.
@@ -37,25 +39,25 @@ module.exports = function(grunt) {
       }
     },
     blanket_mocha : {
-        all : ['webapp/test/index.html'],
-        options : {
-            log : true,
-            threshold: 80,
-            reporter : 'mocha-unfunk-reporter',
-            globalThreshold : 80,
-            moduleThreshold : 80,
-            modulePattern : "./(.*?)/"
-        }
+      all : ['webapp/test/index.html'],
+      options : {
+        log : true,
+        threshold: 80,
+        reporter : 'mocha-unfunk-reporter',
+        globalThreshold : 80,
+        moduleThreshold : 80,
+        modulePattern : './(.*?)/'
+      }
     }
   });
 
   (function loadGruntTasksFrom(devDependencies) {
     for (var key in devDependencies) {
-        if (key.indexOf("grunt") === 0 && key !== "grunt") {
-             grunt.loadNpmTasks(key);
-         }
+      if (key.indexOf('grunt') === 0 && key !== 'grunt') {
+        grunt.loadNpmTasks(key);
+      }
     }
-  }(grunt.file.readJSON("package.json").devDependencies));
+  }(grunt.file.readJSON('package.json').devDependencies));
 
   grunt.registerTask('coverage', ['blanket_mocha']);
 

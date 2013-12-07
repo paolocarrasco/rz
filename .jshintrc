@@ -10,11 +10,13 @@
   "newcap": true,
   "strict": true,
   "browser": true,
+  "node": true,
   "expr": true,
   "immed": true,
   "noarg": true,
   "undef": true,
   "unused": true,
+  "trailing": true,
   "predef": [
     "it",
     "describe",

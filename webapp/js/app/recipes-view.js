@@ -3,6 +3,7 @@
   'use strict';
 
   var RecipesView = module.Backbone.View.extend({
+
     initialize: function() {
       this.collection.bind('reset add', this.render, this);
     },
@@ -16,11 +17,13 @@
     render: function() {
       var recipesBounded = [],
         template = this.template;
+
       this.collection.each(function(recipe) {
         recipesBounded.push(
           Mustache.render(template, recipe.attributes)
         );
       });
+
       this.$el.html(recipesBounded.join(''));
       this.trigger('render');
       return this;

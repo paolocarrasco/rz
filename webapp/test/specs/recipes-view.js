@@ -1,11 +1,7 @@
 /* globals RecipesView, Recipe, RecipesContainer, $ */
 describe('RecipesView', function () {
   'use strict';
-  var recipesView, recipes, recipeListElement;
-
-  before(function() {
-    recipeListElement = document.createElement('section');
-  });
+  var recipesView, recipes;
 
   beforeEach(function () {
     var recipe1 = new Recipe({
@@ -28,10 +24,6 @@ describe('RecipesView', function () {
     });
   });
 
-  afterEach(function() {
-    recipeListElement.innerHTML = '';
-  });
-
   describe('binding to collection', function() {
 
     it('should render if the collection added a new recipe', function(done) {
@@ -41,10 +33,9 @@ describe('RecipesView', function () {
 
   });
 
-  describe('#bind(recipes)', function() {
+  describe('#render()', function() {
 
     it('should bind the recipes properties with the template', function () {
-      recipeListElement.children.should.have.length(0);
       recipesView.render();
       recipesView.el.children.should.have.length(2);
       var recipeName = recipesView.el.querySelector('.name').innerHTML;

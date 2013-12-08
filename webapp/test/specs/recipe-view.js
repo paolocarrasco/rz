@@ -16,10 +16,17 @@ describe('RecipeView', function() {
 
   describe('#render()', function() {
 
-    it('should render the ingredients of the recipe', function() {
+    it('should render all the ingredients', function() {
       recipeView.render();
       recipeView.el.querySelector('.ingredients ul').
         children.should.have.length(2);
+    });
+
+    it('should render the name of the ingredients', function() {
+      recipeView.render();
+      var list = recipeView.el.querySelectorAll('.ingredients ul li');
+      list[0].innerHTML.should.be.eq('arroz');
+      list[1].innerHTML.should.be.eq('pollo');
     });
 
   });

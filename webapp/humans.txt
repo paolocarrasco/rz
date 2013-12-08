@@ -1,15 +1,44 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
+
+RRRRRRRRRRRRRRRRR   ZZZZZZZZZZZZZZZZZZZ
+R::::::::::::::::R  Z:::::::::::::::::Z
+R::::::RRRRRR:::::R Z:::::::::::::::::Z
+RR:::::R     R:::::RZ:::ZZZZZZZZ:::::Z
+  R::::R     R:::::RZZZZZ     Z:::::Z      ssssssssss
+  R::::R     R:::::R        Z:::::Z      ss::::::::::s
+  R::::RRRRRR:::::R        Z:::::Z     ss:::::::::::::s
+  R:::::::::::::RR        Z:::::Z      s::::::ssss:::::s
+  R::::RRRRRR:::::R      Z:::::Z        s:::::s  ssssss
+  R::::R     R:::::R    Z:::::Z           s::::::s
+  R::::R     R:::::R   Z:::::Z               s::::::s
+  R::::R     R:::::RZZZ:::::Z     ZZZZZssssss   s:::::s
+RR:::::R     R:::::RZ::::::ZZZZZZZZ:::Zs:::::ssss::::::s
+R::::::R     R:::::RZ:::::::::::::::::Zs::::::::::::::s
+R::::::R     R:::::RZ:::::::::::::::::Z s:::::::::::ss
+RRRRRRRR     RRRRRRRZZZZZZZZZZZZZZZZZZZ  sssssssssss
+
+
+  ____                _     _         ____
+ / ___|___  _ __ ___ (_) __| | __ _  |  _ \ ___ _ __ _   _  __ _ _ __   __ _
+| |   / _ \| '_ ` _ \| |/ _` |/ _` | | |_) / _ \ '__| | | |/ _` | '_ \ / _` |
+| |__| (_) | | | | | | | (_| | (_| | |  __/  __/ |  | |_| | (_| | | | | (_| |
+ \____\___/|_| |_| |_|_|\__,_|\__,_| |_|   \___|_|   \__,_|\__,_|_| |_|\__,_|
+
+
+¡Que viva el Perú, carajo!
+
+
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Paolo Carrasco - author, dev - github @paolocarrasco
 
 # THANKS
 
-    <name>
+    All the Peruvian chefs that shared their recipes
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    Backbone, Modernizr

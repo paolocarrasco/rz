@@ -6,7 +6,7 @@
       _collection = options.collection;
     },
     routes: {
-      'getItems': 'index'
+      'items': 'index'
     },
     index: function() {
       _collection.fetch();

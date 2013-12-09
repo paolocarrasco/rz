@@ -13,6 +13,6 @@
       el: '.dishes'
     });
     Backbone.history.start({ pushState: false });
-    recipesRouter.navigate('/getItems', { trigger: true });
+    recipesRouter.navigate('/items', { trigger: true });
   });
 })(jQuery);

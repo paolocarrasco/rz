@@ -28,11 +28,11 @@ describe('RecipesRouter', function() {
     }
   });
 
-  describe('#navigate(root)', function() {
+  describe('#navigate(path)', function() {
 
-    it('should fetch the recipes if the url is the root', function(done) {
+    it('should fetch the recipes when the url is the root', function(done) {
       recipesContainer.setCallbackOnFetch(done);
-      recipesRouter.navigate('/getItems', { trigger: true });
+      recipesRouter.navigate('/items', { trigger: true });
     });
 
   });

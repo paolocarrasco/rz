@@ -8,7 +8,7 @@ describe('RecipesView', function () {
         name: 'arroz con pollo',
         label: 'arroz-con-pollo',
         imageUrl: '/img/arroz-con-pollo.jpg',
-        description: 'comida criolla de arroz y pollo',
+        description: 'comida de arroz y pollo',
         ingredients: [{name: 'arroz'}, {name: 'pollo'}]
       }),
       recipe2 = new Recipe({
@@ -16,7 +16,13 @@ describe('RecipesView', function () {
         label: 'aji-gallina',
         description: 'comida criolla de arroz y gallina',
         imageUrl: '/img/aji-gallina.jpg',
-        ingredients: [{name: 'aji'}, {name: 'gallina'}]
+        ingredients: [
+          {name: 'aji'},
+          {name: 'gallina'},
+          {name: 'papas'},
+          {name: 'almendras'},
+          {name: 'mani'}
+        ]
       });
     recipes = new RecipesContainer([recipe1, recipe2]);
     recipesView = new RecipesView({
@@ -35,23 +41,34 @@ describe('RecipesView', function () {
 
   describe('#render()', function() {
 
-    it('should bind the recipes properties with the template', function () {
+    it('should bind the properties of recipes to the template', function () {
       recipesView.render();
-      recipesView.el.children.should.have.length(2);
-      var recipeName = recipesView.el.querySelector('.name').innerHTML;
-      recipeName.should.match(/arroz con pollo/);
+      var recipesSection = recipesView.el;
+      recipesSection.children.should.have.length(2);
+      var recipeName = recipesSection.querySelector('.name');
+      recipeName.innerHTML.should.match(/arroz con pollo/);
+      var recipeDescription = recipesSection.querySelector('header>p');
+      recipeDescription.innerHTML.should.match(/comida de arroz y pollo/);
+      var recipeImages = recipesSection.querySelectorAll('img');
+      recipeImages[1].src.should.be.match(/\/img\/aji-gallina.jpg/);
     });
 
-    it('should render every ingredient of the recipe', function() {
-      var ingredient1, ingredient2, recipeSections;
+    it('should render maximum four top ingredients of each recipe', function() {
+      var ingredients1, ingredients2, recipeSections;
 
       recipesView.render();
       recipeSections = recipesView.el.children;
-      ingredient1 = recipeSections[0].querySelector('section>p').innerText;
-      ingredient2 = recipeSections[1].querySelector('section>p').innerText;
+      ingredients1 = recipeSections[0].querySelectorAll('section p span');
+      ingredients2 = recipeSections[1].querySelectorAll('section p span');
 
-      ingredient1.should.match(/arroz pollo/);
-      ingredient2.should.match(/aji gallina/);
+      ingredients1[0].innerText.should.eq('arroz');
+      ingredients1[1].innerText.should.eq('pollo');
+      should.not.exist(ingredients1[2]);
+      ingredients2[0].innerText.should.eq('aji');
+      ingredients2[1].innerText.should.eq('gallina');
+      ingredients2[2].innerText.should.eq('papas');
+      ingredients2[3].innerText.should.eq('almendras');
+      should.not.exist(ingredients2[4]);
     });
 
   });

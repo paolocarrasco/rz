@@ -32,6 +32,12 @@ describe('RecipesRouter', function() {
 
     it('should fetch the recipes when the url is the root', function(done) {
       recipesContainer.setCallbackOnFetch(done);
+      recipesRouter.navigate('/somewhere-else', { trigger: true });
+      recipesRouter.navigate('/', { trigger: true });
+    });
+
+    it('should fetch the recipes when the url is \'items\'', function(done) {
+      recipesContainer.setCallbackOnFetch(done);
       recipesRouter.navigate('/items', { trigger: true });
     });
 

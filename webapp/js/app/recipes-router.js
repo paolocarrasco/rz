@@ -6,6 +6,7 @@
       _collection = options.collection;
     },
     routes: {
+      '': 'index',
       'items': 'index'
     },
     index: function() {

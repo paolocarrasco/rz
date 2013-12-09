@@ -4,8 +4,8 @@
 !(function($){
   'use strict';
   $(function() {
-    var recipesContainer = new RecipesContainer(),
-      recipesRouter = new RecipesRouter({
+    var recipesContainer = new RecipesContainer();
+    new RecipesRouter({
         collection: recipesContainer
       });
     new RecipesView({
@@ -13,6 +13,5 @@
       el: '.dishes'
     });
     Backbone.history.start({ pushState: false });
-    recipesRouter.navigate('/items', { trigger: true });
   });
 })(jQuery);

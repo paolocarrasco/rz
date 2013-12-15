@@ -6,13 +6,19 @@ describe('RecipesRouter', function() {
   var recipesRouter, recipesContainer;
 
   beforeEach(function() {
-    var _callback;
+    var _callbackFetch, _callbackSelect;
     recipesContainer = {
       fetch: function() {
-        _callback && _callback();
+        _callbackFetch && _callbackFetch();
+      },
+      select: function() {
+        _callbackSelect && _callbackSelect();
       },
       setCallbackOnFetch: function(callback) {
-        _callback = callback;
+        _callbackFetch = callback;
+      },
+      setCallbackOnSelect: function(callback) {
+        _callbackSelect = callback;
       }
     };
     recipesRouter = new RecipesRouter({
@@ -36,9 +42,14 @@ describe('RecipesRouter', function() {
       recipesRouter.navigate('/', { trigger: true });
     });
 
-    it('should fetch the recipes when the url is \'items\'', function(done) {
+    it('should fetch the recipes when the url is \'recipes\'', function(done) {
       recipesContainer.setCallbackOnFetch(done);
-      recipesRouter.navigate('/items', { trigger: true });
+      recipesRouter.navigate('/recipes', { trigger: true });
+    });
+
+    it('should select the recipe when the url is a recipe', function(done) {
+      recipesContainer.setCallbackOnSelect(done);
+      recipesRouter.navigate('/recipes/some-recipe', { trigger: true });
     });
 
   });

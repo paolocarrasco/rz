@@ -6,11 +6,17 @@
       _collection = options.collection;
     },
     routes: {
-      '': 'index',
-      'items': 'index'
+      '': 'recipeListing',
+      'recipes': 'recipeListing',
+      'recipes/:recipe': 'recipeSelection'
     },
-    index: function() {
+
+    recipeListing: function() {
       _collection.fetch();
+    },
+
+    recipeSelection: function(recipeSelected) {
+      _collection.select(recipeSelected);
     }
   });
   module.RecipesRouter = RecipesRouter;

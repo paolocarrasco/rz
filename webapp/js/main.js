@@ -4,13 +4,16 @@
 !(function($){
   'use strict';
   $(function() {
-    var recipesContainer = new RecipesContainer();
+    var recipesContainer = new RecipesContainer(),
+      recipesView = new RecipesView({
+        collection: recipesContainer,
+        el: '.dishes'
+      });
     new RecipesRouter({
         collection: recipesContainer
       });
-    new RecipesView({
-      collection: recipesContainer,
-      el: '.dishes'
+    recipesView.on('selected', function(label) {
+      Backbone.history.navigate(label);
     });
     Backbone.history.start({ pushState: false });
   });

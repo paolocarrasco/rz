@@ -1,20 +1,20 @@
-/* globals
-  Backbone, jQuery, RecipesContainer,
-  RecipesView, RecipesRouter */
-!(function($){
+/* globals jQuery */
+!(function(module, $){
   'use strict';
   $(function() {
-    var recipesContainer = new RecipesContainer(),
-      recipesView = new RecipesView({
+    var recipesContainer = new module.RecipesContainer(),
+      recipesView = new module.RecipesView({
         collection: recipesContainer,
         el: '.dishes'
       });
-    new RecipesRouter({
+    new module.RecipesRouter({
         collection: recipesContainer
       });
+
     recipesView.on('selected', function(label) {
-      Backbone.history.navigate(label);
+      module.Backbone.history.navigate(label);
     });
-    Backbone.history.start({ pushState: false });
+
+    module.Backbone.history.start({ pushState: false });
   });
-})(jQuery);
+})(this, jQuery);

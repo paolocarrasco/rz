@@ -5,7 +5,7 @@
   var RecipesView = module.Backbone.View.extend({
 
     initialize: function() {
-      this.collection.bind('reset add', this.render, this);
+      this.listenTo(this.collection, 'reset add', this.render);
     },
 
     tagName: 'section',

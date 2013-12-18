@@ -11,8 +11,8 @@ describe('RecipesRouter', function() {
       fetch: function() {
         _callbackFetch && _callbackFetch();
       },
-      select: function() {
-        _callbackSelect && _callbackSelect();
+      select: function(label) {
+        _callbackSelect && _callbackSelect(label);
       },
       setCallbackOnFetch: function(callback) {
         _callbackFetch = callback;
@@ -48,9 +48,16 @@ describe('RecipesRouter', function() {
     });
 
     it('should select the recipe when the url is a recipe', function(done) {
-      recipesContainer.setCallbackOnSelect(done);
+      recipesContainer.setCallbackOnSelect(function(label) {
+        label.should.match(/some-recipe/);
+        done();
+      });
       recipesRouter.navigate('/recipes/some-recipe', { trigger: true });
     });
 
+  });
+
+  after(function() {
+    Backbone.history.navigate('/');
   });
 });

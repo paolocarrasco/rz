@@ -27,12 +27,13 @@
   ],
   "dependencies": {
     "backbone": "~1.1.0",
-    "backbone.geppetto" : "*",
+    "backbone.geppetto": "*",
     "underscore": "~1.5.2",
-    "mustache": "~0.7.3"
+    "mustache": "~0.7.3",
+    "jQuery": "~2.1.0"
   },
   "devDependencies": {
-    "mocha" : "~1.13.0",
+    "mocha": "~1.13.0",
     "chai": "~1.8.1"
   }
 }

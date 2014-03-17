@@ -1,5 +1,4 @@
-/* globals jQuery, Mustache, _ */
-!(function(module, $) {
+!(function(module, $, Mustache, _) {
   'use strict';
 
   var RecipesView = module.Backbone.View.extend({
@@ -36,7 +35,8 @@
     },
 
     select: function(event) {
-      this.trigger('selected', $(event.target).closest('article').data('name'));
+      var recipeName = $(event.target).closest('article').data('name');
+      this.trigger('selected', recipeName);
     },
 
     events: {
@@ -45,4 +45,4 @@
   });
 
   module.RecipesView = RecipesView;
-})(this, jQuery);
+})(this, this.jQuery, this.Mustache, this._);

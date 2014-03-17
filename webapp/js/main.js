@@ -1,4 +1,3 @@
-/* globals jQuery */
 !(function(module, $){
   'use strict';
   $(function() {
@@ -17,4 +16,4 @@
 
     module.Backbone.history.start({ pushState: false });
   });
-})(this, jQuery);
+})(this, this.jQuery);

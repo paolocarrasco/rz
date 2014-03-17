@@ -1,5 +1,4 @@
-/* globals Mustache */
-!(function(module) {
+!(function(module, Mustache) {
   'use strict';
   module.RecipeView = module.Backbone.View.extend({
     model: module.Recipe,
@@ -12,4 +11,4 @@
       this.el.innerHTML = Mustache.render(this.template, this.model.attributes);
     }
   });
-})(this);
+})(this, this.Mustache);

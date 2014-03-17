@@ -73,7 +73,6 @@ describe('RecipesView', function () {
 
   });
 
-
   describe('#on(\'selected\', handler)', function() {
 
     it('should call the event when a recipe is clicked', function(done) {

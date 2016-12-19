@@ -1,4 +1,34 @@
 {
+  "name": "rz",
+  "version": "1.0.0",
+  "description": "Peruvian Recipes",
+  "scripts": {
+    "build": "gulp",
+    "serve": "gulp serve",
+    "serve:dist": "gulp serve:dist",
+    "test": "gulp test",
+    "test:auto": "gulp test:auto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paolocarrasco/rz.git"
+  },
+  "keywords": [
+    "recipes",
+    "recetas",
+    "peru",
+    "peruvian",
+    "comida",
+    "peruana",
+    "cocina",
+    "peruano",
+    "recetario"
+  ],
+  "author": "Paolo Carrasco",
+  "license": "gpl-v2",
+  "bugs": {
+    "url": "https://github.com/paolocarrasco/rz/issues"
+  },
   "dependencies": {
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
@@ -53,13 +83,6 @@
     "babel-core": "^6.13.0",
     "babel-polyfill": "^6.7.4",
     "babel-preset-es2015": "^6.2.0"
-  },
-  "scripts": {
-    "build": "gulp",
-    "serve": "gulp serve",
-    "serve:dist": "gulp serve:dist",
-    "test": "gulp test",
-    "test:auto": "gulp test:auto"
   },
   "eslintConfig": {
     "root": true,

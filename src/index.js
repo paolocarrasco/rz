@@ -13,10 +13,10 @@ const pageSections = {
   footer: <Footer/>
 };
 
-for (const section of pageSections) {
+for (const sectionName of Object.keys(pageSections)) {
   ReactDOM.render(
-    pageSections[section],
-    document.querySelector(`body > ${section}`)
+    pageSections[sectionName],
+    document.querySelector(`body > ${sectionName}`)
   );
 }
 

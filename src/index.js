@@ -7,17 +7,16 @@ import {Footer} from './app/base-components/footer';
 
 import './index.scss';
 
-ReactDOM.render(
-  <Hello/>,
-  document.querySelector('body > main')
-);
+const pageSections = {
+  main: <Hello/>,
+  header: <Header/>,
+  footer: <Footer/>
+};
 
-ReactDOM.render(
-  <Header/>,
-  document.querySelector('body > header')
-);
+for (const section of pageSections) {
+  ReactDOM.render(
+    pageSections[section],
+    document.querySelector(`body > ${section}`)
+  );
+}
 
-ReactDOM.render(
-  <Footer/>,
-  document.querySelector('body > footer')
-);

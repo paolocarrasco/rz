@@ -8,10 +8,9 @@ Requirements
 
 Install:
 - Node 6.4
-- Gulp (execute `npm install --global gulp-cli`
+- Gulp (execute `npm install --global gulp-cli`)
 
-Install dependencies:
-- Execute in the project directory:
+To install dependencies execute in the project directory:
 ```
 npm install
 ```

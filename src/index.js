@@ -7,5 +7,5 @@ import './index.scss';
 
 ReactDOM.render(
   <Hello/>,
-  document.getElementById('root')
+  document.querySelector('body > main')
 );

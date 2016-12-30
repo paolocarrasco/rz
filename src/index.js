@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Hello} from './app/hello';
+import {Landing} from './app/landing';
 import {Header} from './app/base-components/header';
 import {Footer} from './app/base-components/footer';
 
 import './index.scss';
 
 const pageSections = {
-  main: <Hello/>,
+  main: <Landing/>,
   header: <Header/>,
   footer: <Footer/>
 };

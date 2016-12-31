@@ -3,19 +3,19 @@ import React, {Component} from 'react';
 export class Landing extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {query: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({query: event.target.value});
   }
 
   handleSubmit(event) {
     // eslint-disable-next-line no-alert
-    alert(`A name was submitted: ${this.state.value}`);
+    alert(`A name was submitted: ${this.state.query}`);
     event.preventDefault();
   }
 
@@ -27,7 +27,7 @@ export class Landing extends Component {
           <input
             type="text"
             placeholder="Enter the query"
-            value={this.state.value}
+            value={this.state.query}
             onChange={this.handleChange}
             />
         </label>

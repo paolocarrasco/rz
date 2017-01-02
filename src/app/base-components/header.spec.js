@@ -6,7 +6,7 @@ import {Header} from './header';
 describe('header component', () => {
   it('should render the title of the app', () => {
     const header = TestUtils.renderIntoDocument(<Header/>);
-    const h1 = TestUtils.findRenderedDOMComponentWithTag(header, 'h1');
-    expect(h1.textContent).toEqual('RZ: Peruvian Recipes');
+    const appTitle = TestUtils.findRenderedDOMComponentWithTag(header, 'span');
+    expect(appTitle.textContent).toEqual('RZ: Peruvian Recipes');
   });
 });

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class Landing extends Component {
+export default class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {query: ''};
@@ -14,24 +14,24 @@ export class Landing extends Component {
   }
 
   handleSubmit(event) {
-    // eslint-disable-next-line no-alert
-    alert(`A name was submitted: ${this.state.query}`);
     event.preventDefault();
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
+        <div className="input-field">
+          <label htmlFor="query">
+            Enter the query here
+          </label>
           <input
             type="text"
-            placeholder="Enter the query"
             value={this.state.query}
             onChange={this.handleChange}
+            id="query"
             />
-        </label>
-        <button type="submit">Search</button>
+        </div>
+        <button className="waves-effect waves-light btn" type="submit">Search</button>
       </form>
     );
   }

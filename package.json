@@ -28,7 +28,7 @@
     "url": "https://github.com/paolocarrasco/rz/issues"
   },
   "devDependencies": {
-    "mocha-unfunk-reporter": "~0.3.5",
+    "mocha-unfunk-reporter": "~0.4.0",
     "grunt-blanket-mocha": "~1.0.0",
     "grunt": ">=0.4.1",
     "grunt-contrib-jshint": "*",

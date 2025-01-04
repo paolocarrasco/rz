@@ -41,4 +41,4 @@ RRRRRRRR     RRRRRRRZZZZZZZZZZZZZZZZZZZ  sssssssssss
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    Backbone, Modernizr
+    React, Next.js

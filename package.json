@@ -2,10 +2,8 @@
   "name": "rz",
   "version": "1.0.0",
   "description": "Peruvian Recipes",
-  "main": "index.js",
   "scripts": {
-    "test": "grunt",
-    "postinstall": "bower install"
+    "test": "echo 'Error: Pending test' && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,15 +25,6 @@
   "bugs": {
     "url": "https://github.com/paolocarrasco/rz/issues"
   },
-  "devDependencies": {
-    "mocha-unfunk-reporter": "~0.4.0",
-    "grunt-blanket-mocha": "~1.0.0",
-    "grunt": ">=0.4.1",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-watch": "*"
-  },
-  "dependencies": {
-    "bower": ">=1.2.7",
-    "express": ">=3.4.4"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }

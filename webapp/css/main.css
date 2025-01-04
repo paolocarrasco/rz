@@ -11,7 +11,7 @@ textarea {
 }
 
 html, body {
-    background-image: url(../img/lightpaperfibers.png);
+    background-image: url(../../public/img/lightpaperfibers.png);
 }
 
 body {
@@ -194,7 +194,7 @@ font-family: 'Life Savers', cursive;
 }
 
 .header-container, .main aside {
-    background-image: url(../img/purty_wood.png);
+    background-image: url(../../public/img/purty_wood.png);
 }
 
 .header-container h1 {

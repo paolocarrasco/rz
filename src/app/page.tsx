@@ -1,8 +1,13 @@
+import Image from 'next/image';
+import lomoSaltadoImage from '../../public/img/lomo-saltado.jpg';
+import arrozConPolloImage from "../../public/img/arroz-con-pollo.jpg";
+import carapulcraImage from "../../public/img/carapulcra.jpg";
+
 const Page = () => (
   <div className="main wrapper clearfix">
     <section className="dishes">
       <article>
-        <img src={"/img/lomo-saltado.jpg"} alt="Lomo Saltado"/>
+        <Image src={lomoSaltadoImage} alt="Lomo Saltado"/>
         <header>
           <h1>Lomo Saltado</h1>
           <p>Riqu&iacute;simo plato peruano como para chuparse los dedos.</p>
@@ -13,7 +18,7 @@ const Page = () => (
         </section>
       </article>
       <article>
-        <img src={"/img/arroz-con-pollo.jpg"} alt="Arroz con Pollo"/>
+        <Image src={arrozConPolloImage} alt="Arroz con Pollo"/>
         <header>
           <h1>Arroz con pollo</h1>
           <p>T&iacute;pico plato peruano que se cocina en cualquier d&iacute;a.</p>
@@ -27,7 +32,7 @@ const Page = () => (
     <aside>
       <h3>Inspiraci&oacute;n para el d&iacute;a:</h3>
       <p>Carapulcra</p>
-      <img src={"/img/carapulcra.jpg"} alt="Carapulcra"/>
+      <Image src={carapulcraImage} alt="Carapulcra"/>
     </aside>
     <footer>
       <h3>RZ&reg; 2025</h3>

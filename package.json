@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "next dev --turbopack # launch of development server",
     "build": "next build # prepares the app for production",
-    "start": "next start # launch of production server",
+    "start": "npx serve@latest out # launch of production server",
     "lint": "next lint # runs ESLint for all files for the app",
     "prepare": "node .husky/install.mjs"
   },

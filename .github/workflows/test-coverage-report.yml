@@ -31,4 +31,4 @@ jobs:
 
       - name: Report test coverage
         run:
-          npm test:ci
+          npm run test:ci

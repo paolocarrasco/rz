@@ -3,7 +3,7 @@ import lomoSaltadoImage from '../../public/img/lomo-saltado.jpg';
 import arrozConPolloImage from "../../public/img/arroz-con-pollo.jpg";
 import carapulcraImage from "../../public/img/carapulcra.jpg";
 import Footer from "@/components/footer";
-import {RecipeItem} from "@/components/recipe-item";
+import {RecipeList} from "@/components/recipe-list";
 
 const Page = () => {
   const recipes = [
@@ -27,14 +27,9 @@ const Page = () => {
     }
   ];
 
-  const [lomoSaltado, arrozConPollo] = recipes;
-
   return (
     <div className="main wrapper clearfix">
-      <section className="dishes">
-        <RecipeItem recipe={lomoSaltado} key={0}/>
-        <RecipeItem recipe={arrozConPollo} key={1}/>
-      </section>
+      <RecipeList recipes={recipes}/>
       <aside>
         <h3>Inspiración para el día:</h3>
         <p>Carapulcra</p>

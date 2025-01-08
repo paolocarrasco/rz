@@ -1,15 +1,8 @@
 import Image from 'next/image';
-import {StaticImport} from "next/dist/shared/lib/get-img-props";
-
-type RecipeItem = {
-  name: string;
-  description: string;
-  imageSource: string | StaticImport;
-  ingredients: string[];
-}
+import {Recipe} from "@/components/types/recipe";
 
 type RecipeItemProps = {
-  recipe: RecipeItem;
+  recipe: Recipe;
 }
 
 export const RecipeItem = ({recipe: {description, imageSource, ingredients, name}}: RecipeItemProps) => (
@@ -19,7 +12,7 @@ export const RecipeItem = ({recipe: {description, imageSource, ingredients, name
     <p>{description}</p>
     <section>
       <h3>Ingredientes principales</h3>
-      <ul>{ingredients.map((ingredient, index) => (<li key={index}>{ingredient}</li>))}</ul>
+      <ul>{ingredients.map((ingredient: string, index: number) => (<li key={index}>{ingredient}</li>))}</ul>
     </section>
   </article>
 );

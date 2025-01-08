@@ -25,9 +25,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    uses: ./.github/workflows/test-coverage-report.yml
+
     steps:
-      - name: Wait for the test coverage to finish
-        uses: ./.github/workflows/test-coverage-report.yml
 
       - name: Checkout
         uses: actions/checkout@v4

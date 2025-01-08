@@ -21,12 +21,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Wait for the test coverage workflow to finish
+  wait-test-coverage:
+    uses: ./.github/workflows/test-coverage-report.yml
+
   # Build job
   build:
     runs-on: ubuntu-latest
-
-    uses: ./.github/workflows/test-coverage-report.yml
-
+    needs: wait-test-coverage
     steps:
 
       - name: Checkout

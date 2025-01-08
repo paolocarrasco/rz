@@ -24,6 +24,7 @@ jobs:
   # Wait for the test coverage workflow to finish
   wait-test-coverage:
     uses: ./.github/workflows/test-coverage-report.yml
+    secrets: inherit
 
   # Build job
   build:

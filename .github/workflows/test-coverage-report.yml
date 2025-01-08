@@ -30,4 +30,5 @@ jobs:
           cache: 'npm'
 
       - name: Report test coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2
+        run:
+          npm test:ci

@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import lomoSaltadoImage from '../../public/img/lomo-saltado.jpg';
 import arrozConPolloImage from "../../public/img/arroz-con-pollo.jpg";
 import carapulcraImage from "../../public/img/carapulcra.jpg";
 import Footer from "@/components/footer";
 import {RecipeList} from "@/components/recipe-list";
+import InspirationHint from "@/components/inspiration-hint";
 
 const Page = () => {
   const recipes = [
@@ -30,11 +30,7 @@ const Page = () => {
   return (
     <div className="main wrapper clearfix">
       <RecipeList recipes={recipes}/>
-      <aside>
-        <h3>Inspiración para el día:</h3>
-        <p>Carapulcra</p>
-        <Image src={carapulcraImage} alt="Carapulcra"/>
-      </aside>
+      <InspirationHint recipe={recipes[1]} />
       <Footer/>
     </div>
   );

@@ -1,9 +1,11 @@
 import {Recipe} from "@/components/types/recipe";
 import {RecipeItem} from "./recipe-item";
 
-export function RecipeList({recipes}: {
-  recipes: Recipe[]
-}) {
+type RecipeListProps = {
+  recipes: Recipe[];
+}
+
+export function RecipeList({recipes}: RecipeListProps) {
   return (
     <section className="dishes">
       {

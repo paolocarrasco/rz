@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import {Recipe} from "@/app/list/components/types/recipe";
-import {sanitizeImageSourceForProduction} from "@/app/list/lib/image-sanitization";
+import {sanitizeImageSourceForProduction} from "../../list/lib/image-sanitization";
 
 type RecipeItemProps = {
   recipe: Recipe;

@@ -4,18 +4,19 @@
       "name": "Lomo Saltado",
       "description": "Riquísimo plato peruano como para chuparse los dedos.",
       "ingredients": [
-        "Papa",
+        "papa",
         "carne de vaca",
         "cebolla",
         "ají amarillo"
       ],
-      "imageSource": "/img/lomo-saltado.jpg"
+      "imageSource": "/img/lomo-saltado.jpg",
+      "servings": 2
     },
     {
       "name": "Arroz con pollo",
       "description": "Típico plato peruano que se cocina en cualquier día.",
       "ingredients": [
-        "Arroz",
+        "arroz",
         "pollo",
         "culantro",
         "ají amarillo"
@@ -26,14 +27,14 @@
       "name": "Carapulcra",
       "description": "Plato de la costa peruana que se cocina con papa seca.",
       "ingredients": [
-        "Papa seca",
+        "papa seca",
         "carne de cerdo",
         "ají panca"
       ],
       "imageSource": "/img/carapulcra.jpg"
     },
     {
-      "name": "papa a la huancaína",
+      "name": "Papa a la huancaína",
       "description": "Plato típico de Huancayo, región del Perú, compuesto de patatas cocidas acompañadas de una salsa de queso, leche y pimiento amarillo.",
       "imageSource": "/img/papa-a-la-huancaina.jpg",
       "categories": [
@@ -42,10 +43,10 @@
         "acompañamiento"
       ],
       "ingredients": [
-        "aji amarillo",
+        "ají amarillo",
         "papas"
       ],
-      "preparation": [
+      "instructions": [
         {
           "stepNumber": 1,
           "details": ""

@@ -10,7 +10,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #222;
+    --foreground: #f0f0f0;
   }
 }
 
@@ -23,6 +23,12 @@ body {
 
 html, body {
   background-image: url(../../public/img/lightpaperfibers.png);
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-image: url(../../public/img/dark-rock-texture.jpg);
+  }
 }
 
 /* ==========================================================================
@@ -91,11 +97,6 @@ body {
 
 .main aside {
   border-top: 20px solid  rgba(228, 77, 38, 0.6);
-}
-
-.header-container,
-.main aside {
-  background: #f16529;
 }
 
 .title {
@@ -203,6 +204,7 @@ font-family: 'Life Savers', cursive;
 
 .header-container, .main aside {
   background-image: url(../../public/img/purty_wood.png);
+  background-color: #febb50;
 }
 
 .header-container h1 {
@@ -221,6 +223,12 @@ font-family: 'Life Savers', cursive;
   border-bottom: 0.5em solid rgba(0, 0, 0, 0.5);
   padding: 1em 0;
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dishes article {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 .dishes article:hover {
@@ -270,8 +278,14 @@ font-family: 'Life Savers', cursive;
   content: ","
 }
 
-.main aside, footer {
+.main aside {
   margin-left: 62%;
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  width: 100%;
 }
 
 .main aside p {

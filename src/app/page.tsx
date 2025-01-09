@@ -1,36 +1,15 @@
-import lomoSaltadoImage from '../../public/img/lomo-saltado.jpg';
-import arrozConPolloImage from "../../public/img/arroz-con-pollo.jpg";
-import carapulcraImage from "../../public/img/carapulcra.jpg";
 import Footer from "@/components/footer";
 import {RecipeList} from "@/components/recipe-list";
 import InspirationHint from "@/components/inspiration-hint";
+import {obtainRecipes} from "@/app/lib/recipe-fetcher";
 
-const Page = () => {
-  const recipes = [
-    {
-      name: "Lomo Saltado",
-      description: "Riquísimo plato peruano como para chuparse los dedos.",
-      ingredients: ["Papa", "carne de vaca", "cebolla", "ají amarillo"],
-      imageSource: lomoSaltadoImage,
-    },
-    {
-      name: "Arroz con pollo",
-      description: "Típico plato peruano que se cocina en cualquier día.",
-      ingredients: ["Arroz", "pollo", "culantro", "ají amarillo"],
-      imageSource: arrozConPolloImage,
-    },
-    {
-      name: "Carapulcra",
-      description: "Plato de la costa peruana que se cocina con papa seca.",
-      ingredients: ["Papa seca", "carne de cerdo", "ají panca"],
-      imageSource: carapulcraImage,
-    }
-  ];
+const Page = async () => {
+  const recipes = await obtainRecipes();
 
   return (
     <div className="main wrapper clearfix">
       <RecipeList recipes={recipes}/>
-      <InspirationHint recipe={recipes[1]} />
+      <InspirationHint recipe={recipes[3]}/>
       <Footer/>
     </div>
   );

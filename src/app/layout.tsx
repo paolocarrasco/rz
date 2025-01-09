@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import "./globals.css";
+import Footer from "@/app/components/footer";
 
 // https://nextjs.org/docs/app/building-your-application/optimizing/metadata#default-fields
 // Charset and viewport meta tags are added by default.
@@ -31,6 +32,7 @@ export default function RootLayout({
     </div>
     <div className="main-container">
       {children}
+      <Footer/>
     </div>
     </body>
     </html>

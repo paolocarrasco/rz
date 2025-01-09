@@ -1,4 +1,4 @@
-import {Recipe} from "@/components/types/recipe";
+import {Recipe} from "@/app/list/components/types/recipe";
 import {RecipeItem} from "./recipe-item";
 
 type RecipeListProps = {

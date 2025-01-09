@@ -1,4 +1,4 @@
-import {Recipe} from "@/components/types/recipe";
+import {Recipe} from "@/app/list/components/types/recipe";
 import Image from "next/image";
 
 const InspirationHint = ({recipe: {name, imageSource}}: { recipe: Recipe }) => (

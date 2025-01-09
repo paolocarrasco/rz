@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {Recipe} from "@/components/types/recipe";
+import {Recipe} from "@/app/list/components/types/recipe";
 
 type RecipeItemProps = {
   recipe: Recipe;
